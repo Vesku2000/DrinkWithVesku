@@ -1,0 +1,155 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./img/banner.jpg);
+    background-position: center -50px;
+    background-size: cover;
+    color: white;
+    height: 200px;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  header h1 {
+    font-size: 48px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+    }
+  
+    .form label {
+      margin-bottom: 10px;
+    }
+  
+    .form input[type="text"],
+    .form select {
+      width: 200px;
+      height: 30px;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      padding: 0 10px;
+      font-size: 16px;
+    }
+  
+    .form button[type="submit"] {
+      margin-top: 10px;
+      width: 80px;
+      height: 40px;
+      border: none;
+      border-radius: 5px;
+      background-color: lightblue;
+      color: white;
+      font-size: 16px;
+    }
+  
+    .form button[type="submit"]:hover {
+      background-color: steelblue;
+      cursor: pointer;
+    }
+  
+    .player-list {
+        /* Center the list items within the parent element */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Set the height of the parent element to a fixed value or a percentage of the viewport height */
+      }
+      
+      .player-list li {
+        /* Add some styling to the list items */
+        list-style: none;
+        font-size: 18px;
+      }
+  
+    .player {
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      width: auto;
+      cursor: pointer;
+      box-shadow: none;
+      z-index: 300;
+    }
+  
+    .avatar {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+  h2{
+    text-align: center;
+  }
+  
+  .categories {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+  
+    .category {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 20%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: box-shadow 0.3s;
+    }
+  
+    .category:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+  
+    .category img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .category h3 {
+      margin-top: 10px;
+    }
+  
+    .category p {
+      text-align: center;
+    }
+  
+    .container {
+        /* Set the height of the container to a fixed value or a percentage of the viewport height */
+        height: 5rem;
+        /* Center the elements within the container */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .start-game {
+        /* Add some styling to the button */
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+      .start-game:hover {
+        /* Change the background color on hover */
+        background-color: blue;
+      }
