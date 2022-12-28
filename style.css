@@ -3,6 +3,9 @@ html, body {
     width: 100%;
     margin: 0;
   }
+  .hidden {
+    display: none;
+  }
   
   header {
     display: flex;
@@ -117,6 +120,19 @@ html, body {
       margin-bottom: 20px;
       transition: box-shadow 0.3s;
     }
+
+    .category:nth-of-type(1){
+      background-color: #FFC0CB;
+    }
+    .category:nth-of-type(2){
+      background-color: #ADD8E6;
+    }
+    .category:nth-of-type(3){
+      background-color: #F0E68C;
+    }
+    .category:nth-of-type(4){
+      background-color: #FFE4E1 ;
+    }
   
     .category:hover {
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -157,3 +173,31 @@ html, body {
         /* Change the background color on hover */
         background-color: blue;
       }
+
+      #red-card {
+        background-color: red;
+        width: 500px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      
+      #card-text {
+        font-size: 36px;
+        text-align: center;
+      }
+      
+      #card-image {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+      }
+      
+      

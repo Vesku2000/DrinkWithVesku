@@ -68,3 +68,14 @@ const form = document.querySelector('.form');
     // Update the players in local storage
     localStorage.setItem('players', JSON.stringify(players));
   });
+
+  const startGameButton = document.getElementById("start-game-button");
+const redCard = document.getElementById("red-card");
+const elements = document.querySelectorAll("body *");
+
+startGameButton.addEventListener("click", () => {
+  elements.forEach((element) => {
+    element.classList.add("hidden");
+  });
+  redCard.classList.remove("hidden");
+});
