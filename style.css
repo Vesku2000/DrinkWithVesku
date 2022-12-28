@@ -76,6 +76,10 @@ html, body {
         list-style: none;
         font-size: 18px;
       }
+      .player-list div{
+        border-radius: 5px;
+        border: 1px solid lightgray;
+      }
   
     .player {
       display: flex;
