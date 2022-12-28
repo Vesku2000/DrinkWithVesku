@@ -183,19 +183,9 @@ html, body {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-      }
-      
-      #card-text {
-        font-size: 36px;
+
         text-align: center;
-      }
-      
-      #card-image {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 50px;
-        height: 50px;
+        text-transform: uppercase;
       }
       .hidden {
         display: none;

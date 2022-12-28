@@ -74,21 +74,26 @@ const redCard = document.getElementById("red-card");
 const elements = document.querySelectorAll("body *");
 const cardText = document.getElementById("card-text");
 
-startGameButton.addEventListener("click", () => {
-  elements.forEach((element) => {
-    element.classList.add("hidden");
-  });
-  redCard.style.display = "block";
-
-  const randomIndex = Math.floor(Math.random() * questions.length);
-  const question = questions[randomIndex];
-  cardText.value = question;
-});
-
-
 const questions = [
   "What is your favorite color?",
   "What is your favorite food?",
   "What is your favorite hobby?",
   "What is your favorite movie?"
 ];
+
+startGameButton.addEventListener("click", () => {
+  elements.forEach((element) => {
+    element.classList.add("hidden");
+  });
+  redCard.style.display = "block";
+  addTextToRedCard(questions[Math.floor(Math.random() * 3)]);
+  console.log(questions[Math.floor(Math.random() * questions.length)]);
+});
+
+
+
+
+function addTextToRedCard(text) {
+  var redCard = document.getElementById("red-card");
+  redCard.innerHTML = text;
+}
