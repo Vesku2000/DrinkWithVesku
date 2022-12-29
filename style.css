@@ -85,6 +85,7 @@ header h1 {
   .player {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin: 10px;
     width: auto;
     cursor: pointer;
@@ -188,6 +189,7 @@ h2{
       text-align: center;
       text-transform: uppercase;
     }
+    
     .hidden {
       display: none;
     }
@@ -203,4 +205,31 @@ h2{
       height: 50px;
       width: 50px;
       border-radius: 50%;
+    }
+
+    #attend-div{
+      position: relative;
+      top: 100px;
+      display: flex;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+    #myButton {
+      position: absolute;
+      bottom: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 20px;  /* increase the font size */
+      padding: 10px 20px;  /* add padding to the button */
+      background-color: lightgreen;  /* add a background color */
+      border: none;  /* remove the default border */
+      border-radius: 5px;  /* add rounded corners */
+      cursor: pointer;  /* change the cursor when hovering over the button */
+    }
+    
+    #myButton:hover {
+      background-color: limegreen;  /* change the background color on hover */
     }

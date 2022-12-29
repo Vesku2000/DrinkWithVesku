@@ -98,21 +98,7 @@ function getRandomPlayerName() {
   const chosenOne = array[getRandomPlayer].name;
   return chosenOne;
 }
-/*
-function getRandomPlayerAvatar() {
-  let str = localStorage.getItem('players');
-  console.log(str.length);
-  // Parse the string value into a JavaScript array
-  let array = JSON.parse(str);
 
-
-  const countPlayers = array.length;
-  const getRandomPlayer = Math.floor(Math.random() * countPlayers);
-  const chosenOne = array[getRandomPlayer].avatar;
-  console.log(chosenOne);
-  return chosenOne;
-}
-*/
 
 function getAvatar(name, data) {
   // Loop through the array
@@ -151,6 +137,7 @@ startGameButton.addEventListener("click", () => {
   elements.forEach((element) => {
     element.classList.add("hidden");
   });
+  showButton();
   playerdiv.style.display = "block";
   document.body.style.backgroundColor = ""
   redCard.style.display = "block";
@@ -160,7 +147,6 @@ startGameButton.addEventListener("click", () => {
   nameText.textContent = getRandomPlayerName();
   console.log(nameText);
   redCard.appendChild(nameText);
-  //getRandomPlayerAvatar();
   const data = JSON.parse(localStorage.getItem("players"));
   const ava = getAvatar(nameText.textContent, data)
   const playerElement = document.createElement('div');
@@ -206,5 +192,12 @@ categoryList.addEventListener('click', (event) => {
     }
   }
 });
+
+document.getElementById("myButton").style.display = "none";
+
+// Show the button when the game starts
+function showButton() {
+  document.getElementById("myButton").style.display = "block";
+}
 
 
