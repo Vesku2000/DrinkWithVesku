@@ -138,9 +138,9 @@ startGameButton.addEventListener("click", () => {
     element.classList.add("hidden");
   });
   showButton();
+  redCard.style.display = "block";
   playerdiv.style.display = "block";
   document.body.style.backgroundColor = ""
-  redCard.style.display = "block";
   const quest = questions.splice(0, 1)[0];
   p.textContent = quest;
   redCard.appendChild(p);
@@ -156,6 +156,7 @@ startGameButton.addEventListener("click", () => {
       <span>${name}</span>
     `;
   redCard.appendChild(playerElement);
+  
 
 
 
@@ -199,5 +200,34 @@ document.getElementById("myButton").style.display = "none";
 function showButton() {
   document.getElementById("myButton").style.display = "block";
 }
+
+function updateRedCard() {
+  console.log("workkii");
+  showButton();
+  playerdiv.style.display = "block";
+  document.body.style.backgroundColor = "black";
+  redCard.style.display = "block";
+  const quest = questions.splice(0, 1)[0];
+  p.textContent = quest;
+  redCard.appendChild(p);
+  nameText.textContent = getRandomPlayerName();
+  console.log(nameText);
+  redCard.appendChild(nameText);
+  const oldPlayer = document.querySelectorAll(".player");
+  oldPlayer.remove();
+  const data = JSON.parse(localStorage.getItem("players"));
+  const ava = getAvatar(nameText.textContent, data)
+  const playerElement = document.createElement('div');
+  playerElement.classList.add('player');
+  playerElement.innerHTML = `
+      <img src="./img/${ava}" class="gameAvatar">
+      
+    `;
+  redCard.appendChild(playerElement);
+
+}
+
+const button = document.getElementById("myButton");
+button.addEventListener("click", updateRedCard);
 
 
