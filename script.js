@@ -98,6 +98,8 @@ startGameButton.addEventListener("click", () => {
   //addTextToRedCard(questions[Math.floor(Math.random() * 3)]);
   console.log(questions[Math.floor(Math.random() * questions.length)]);
 
+  console.log(backgroundColor);
+
 });
 
 
@@ -124,6 +126,16 @@ categoryList.addEventListener('click', (event) => {
       }
       selectedCategory = target;
       target.style.boxShadow = '0 0 10px red';
+      const computedStyles = getComputedStyle(selectedCategory);
+      const backgroundColor = getPropertyValue("background-color");
+      selectedCategory.setAttribute("data-color", backgroundColor);
+      console.log(backgroundColor);
+      //taking bg color from category
+      
     }
   }
 });
+
+
+
+
