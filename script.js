@@ -98,15 +98,38 @@ function getRandomPlayerName() {
   const chosenOne = array[getRandomPlayer].name;
   return chosenOne;
 }
-function findAvatar(arr, name) {
-  console.log(arr.length);
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].name === name) {
-      return arr[i].avatar;
+/*
+function getRandomPlayerAvatar() {
+  let str = localStorage.getItem('players');
+  console.log(str.length);
+  // Parse the string value into a JavaScript array
+  let array = JSON.parse(str);
+
+
+  const countPlayers = array.length;
+  const getRandomPlayer = Math.floor(Math.random() * countPlayers);
+  const chosenOne = array[getRandomPlayer].avatar;
+  console.log(chosenOne);
+  return chosenOne;
+}
+*/
+
+function getAvatar(name, data) {
+  // Loop through the array
+  for (const item of data) {
+    // Check if the name matches the current item
+    if (item.name === name) {
+      // If it does, return the avatar value
+      return item.avatar;
     }
   }
+  // If no matching item is found, return null
   return null;
 }
+
+
+
+
 
 
 
@@ -137,14 +160,17 @@ startGameButton.addEventListener("click", () => {
   nameText.textContent = getRandomPlayerName();
   console.log(nameText);
   redCard.appendChild(nameText);
+  //getRandomPlayerAvatar();
+  const data = JSON.parse(localStorage.getItem("players"));
+  const ava = getAvatar(nameText.textContent, data)
+  const playerElement = document.createElement('div');
+  playerElement.classList.add('player');
+  playerElement.innerHTML = `
+      <img src="./img/${ava}" class="gameAvatar">
+      <span>${name}</span>
+    `;
+  redCard.appendChild(playerElement);
 
-  const data = localStorage.getItem("players");
-  console.log(data.length);
-  const avatar = findAvatar(localStorage.getItem("players"), nameText.textContent);
-  console.log(avatar);
-
-  avatarImg.src = `./img/${avatar}`;
-  redCard.appendChild(avatarImg);
 
 
 

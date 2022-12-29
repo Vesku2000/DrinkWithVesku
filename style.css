@@ -197,4 +197,10 @@ h2{
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
-    
+    .gameAvatar {
+      display: flex;
+      align-items: center;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
