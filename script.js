@@ -1,81 +1,112 @@
 const form = document.querySelector('.form');
-  const playerList = document.querySelector('.player-list');
+const playerList = document.querySelector('.player-list');
 
-  // Load any existing players from local storage
-  const players = JSON.parse(localStorage.getItem('players')) || [];
-  players.forEach((player) => {
-    const playerElement = document.createElement('div');
-    playerElement.classList.add('player');
-    playerElement.innerHTML = `
+// Load any existing players from local storage
+const players = JSON.parse(localStorage.getItem('players')) || [];
+players.forEach((player) => {
+  const playerElement = document.createElement('div');
+  playerElement.classList.add('player');
+  playerElement.innerHTML = `
       <img src="./img/${player.avatar}" class="avatar">
       <span>${player.name}</span>
     `;
-    playerList.appendChild(playerElement);
-  });
+  playerList.appendChild(playerElement);
+});
 
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
 
-    // Add the new player to the list
-    const name = form.elements.name.value;
-    const avatar = form.elements.avatar.value;
-    players.push({ name, avatar });
+  // Add the new player to the list
+  const name = form.elements.name.value;
+  const avatar = form.elements.avatar.value;
+  players.push({ name, avatar });
 
-    const playerElement = document.createElement('div');
-    playerElement.classList.add('player');
-    playerElement.innerHTML = `
+  const playerElement = document.createElement('div');
+  playerElement.classList.add('player');
+  playerElement.innerHTML = `
       <img src="./img/${avatar}" class="avatar">
       <span>${name}</span>
     `;
-    playerList.appendChild(playerElement);
+  playerList.appendChild(playerElement);
 
-    // Save the players to local storage
-    localStorage.setItem('players', JSON.stringify(players));
+  // Save the players to local storage
+  localStorage.setItem('players', JSON.stringify(players));
 
-    form.reset();
-  });
+  form.reset();
+});
 
 
-  let selectedPlayer;
+let selectedPlayer;
 
-  playerList.addEventListener('click', (event) => {
-    const target = event.target;
-    if (target.classList.contains('player')) {
-      if (selectedPlayer === target) {
-        // Deselect the player if it is already selected
-        selectedPlayer = null;
-        target.style.boxShadow = 'none';
-      } else {
-        if (selectedPlayer) {
-          selectedPlayer.style.boxShadow = 'none';
-        }
-        selectedPlayer = target;
-        target.style.boxShadow = '0 0 10px red';
-      }
-    }
-  });
-
-  const deleteButton = document.querySelector('#delete-button');
-  deleteButton.addEventListener('click', () => {
-    // Delete the selected player from the list
-    if (selectedPlayer) {
-      const index = Array.from(playerList.children).indexOf(selectedPlayer);
-      players.splice(index, 1);
-      selectedPlayer.remove();
+playerList.addEventListener('click', (event) => {
+  const target = event.target;
+  if (target.classList.contains('player')) {
+    if (selectedPlayer === target) {
+      // Deselect the player if it is already selected
       selectedPlayer = null;
+      target.style.boxShadow = 'none';
+    } else {
+      if (selectedPlayer) {
+        selectedPlayer.style.boxShadow = 'none';
+      }
+      selectedPlayer = target;
+      target.style.boxShadow = '0 0 10px red';
     }
+  }
+});
 
-    // Update the players in local storage
-    localStorage.setItem('players', JSON.stringify(players));
-  });
+const deleteButton = document.querySelector('#delete-button');
+deleteButton.addEventListener('click', () => {
+  // Delete the selected player from the list
+  if (selectedPlayer) {
+    const index = Array.from(playerList.children).indexOf(selectedPlayer);
+    players.splice(index, 1);
+    selectedPlayer.remove();
+    selectedPlayer = null;
+  }
 
-  const startGameButton = document.getElementById("start-game-button");
+  // Update the players in local storage
+  localStorage.setItem('players', JSON.stringify(players));
+});
+
+const startGameButton = document.getElementById("start-game-button");
 const redCard = document.getElementById("red-card");
 const elements = document.querySelectorAll("body *");
 const cardText = document.getElementById("card-text");
+//creating elements inside game card
 var p = document.createElement("p");
+const nameText = document.createElement("p");
+const avatarImg = document.createElement('img');
+
+
+
+
+nameText.id = "";
 p.id = "question-text";
 const playerdiv = document.getElementById("attend-div");
+
+//getting random player name
+function getRandomPlayerName() {
+  let str = localStorage.getItem('players');
+  console.log(str.length);
+  // Parse the string value into a JavaScript array
+  let array = JSON.parse(str);
+
+
+  const countPlayers = array.length;
+  const getRandomPlayer = Math.floor(Math.random() * countPlayers);
+  const chosenOne = array[getRandomPlayer].name;
+  return chosenOne;
+}
+function findAvatar(arr, name) {
+  console.log(arr.length);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].name === name) {
+      return arr[i].avatar;
+    }
+  }
+  return null;
+}
 
 
 
@@ -86,30 +117,47 @@ const questions = [
   "What is your favorite movie?"
 ];
 
+function shufleQuestions() {
+  for (let i = questions.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [questions[i], questions[j]] = [questions[j], questions[i]];
+  }
+}
+
 startGameButton.addEventListener("click", () => {
   elements.forEach((element) => {
     element.classList.add("hidden");
   });
   playerdiv.style.display = "block";
-  document.body.style.backgroundColor = "#FFC0CB"
+  document.body.style.backgroundColor = ""
   redCard.style.display = "block";
-  p.textContent = questions[Math.floor(Math.random() * questions.length)];
+  const quest = questions.splice(0, 1)[0];
+  p.textContent = quest;
   redCard.appendChild(p);
-  //addTextToRedCard(questions[Math.floor(Math.random() * 3)]);
-  console.log(questions[Math.floor(Math.random() * questions.length)]);
+  nameText.textContent = getRandomPlayerName();
+  console.log(nameText);
+  redCard.appendChild(nameText);
 
-  console.log(backgroundColor);
+  const data = localStorage.getItem("players");
+  console.log(data.length);
+  const avatar = findAvatar(localStorage.getItem("players"), nameText.textContent);
+  console.log(avatar);
 
+  avatarImg.src = `./img/${avatar}`;
+  redCard.appendChild(avatarImg);
+
+
+
+
+
+  document.body.style.backgroundColor = selectedCategory.id;
 });
 
 
 
 
-function addTextToRedCard(text) {
-  var redCard = document.getElementById("red-card");
-  redCard.innerHTML = text;
-}
 
+//selecting category
 let selectedCategory;
 const categoryList = document.querySelector('.categories');
 
@@ -126,16 +174,11 @@ categoryList.addEventListener('click', (event) => {
       }
       selectedCategory = target;
       target.style.boxShadow = '0 0 10px red';
-      const computedStyles = getComputedStyle(selectedCategory);
-      const backgroundColor = getPropertyValue("background-color");
-      selectedCategory.setAttribute("data-color", backgroundColor);
-      console.log(backgroundColor);
-      //taking bg color from category
-      
+
+
+
     }
   }
 });
-
-
 
 

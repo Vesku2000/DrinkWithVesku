@@ -10,75 +10,75 @@
 
 <body>
 
-<header>
-  <h1>Drink With Vesku</h1>
-</header>
+  <header>
+    <h1>Drink With Vesku</h1>
+  </header>
 
-<form class="form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name">
-      <label for="avatar">Avatar:</label>
-      <select id="avatar" name="avatar">
-        <option value="woman.jpg">Woman</option>
-        <option value="man.png">Man 2</option>
-        <option value="wo.png">Woman 2</option>
-        <option value="avatar4.jpg">Avatar 4</option>
-        <option value="avatar5.jpg">Avatar 5</option>
-        <option value="avatar6.jpg">Avatar 6</option>
-        <option value="avatar7.jpg">Avatar 7</option>
-        <option value="avatar8.jpg">Avatar 8</option>
-        <option value="avatar9.jpg">Avatar 9</option>
-        <option value="avatar10.jpg">Avatar 10</option>
-      </select>
-      <button type="submit">Add Player</button>
-    </form>
+  <form class="form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <label for="avatar">Avatar:</label>
+    <select id="avatar" name="avatar">
+      <option value="woman.jpg">Woman</option>
+      <option value="man.png">Man 2</option>
+      <option value="wo.png">Woman 2</option>
+      <option value="avatar4.jpg">Avatar 4</option>
+      <option value="avatar5.jpg">Avatar 5</option>
+      <option value="avatar6.jpg">Avatar 6</option>
+      <option value="avatar7.jpg">Avatar 7</option>
+      <option value="avatar8.jpg">Avatar 8</option>
+      <option value="avatar9.jpg">Avatar 9</option>
+      <option value="avatar10.jpg">Avatar 10</option>
+    </select>
+    <button type="submit">Add Player</button>
+  </form>
   <h2>Players</h2>
-    <div class="player-list">
+  <div class="player-list">
+  </div>
+  <div class="container">
+    <button type="button" id="delete-button">Delete Player</button>
+  </div>
+
+
+
+
+  <div class="categories">
+    <div class="category" id="#FFC0CB">
+      <img src="img/homeParty.png" alt="Category 1">
+      <h3>Kotibileet</h3>
+      <p>Description of category 1</p>
     </div>
-    <div class="container">
-        <button type="button" id="delete-button">Delete Player</button>
+    <div class="category" id="#ADD8E6">
+      <img src="img/party.png" alt="Category 2">
+      <h3>Pää sekasin</h3>
+      <p>Description of category 2</p>
     </div>
-
-
-
-
-<div class="categories">
-  <div class="category">
-    <img src="img/homeParty.png" alt="Category 1">
-    <h3>Kotibileet</h3>
-    <p>Description of category 1</p>
+    <div class="category" id="#F0E68C">
+      <img src="img/sport.png" alt="Category 3">
+      <h3>Sporttii</h3>
+      <p>Description of category 3</p>
+    </div>
+    <div class="category" id="#FFE4E1">
+      <img src="img/tequila.png" alt="Category 4">
+      <h3>Muistanks mä väärin?</h3>
+      <p>Description of category 4</p>
+    </div>
   </div>
-  <div class="category">
-    <img src="img/party.png" alt="Category 2">
-    <h3>Pää sekasin</h3>
-    <p>Description of category 2</p>
-  </div>
-  <div class="category">
-    <img src="img/sport.png" alt="Category 3">
-    <h3>Sporttii</h3>
-    <p>Description of category 3</p>
-  </div>
-  <div class="category">
-    <img src="img/tequila.png" alt="Category 4">
-    <h3>Muistanks mä väärin?</h3>
-    <p>Description of category 4</p>
-  </div>
-</div>
 
-<div class="container">
-  <button class="start-game" id="start-game-button">Start Game</button>
+  <div class="container">
+    <button class="start-game" id="start-game-button">Start Game</button>
   </div>
   <div id="attend-div" style="display: none;">This is the div</div>
   <div id="red-card" class="hidden">
   </div>
-  
 
 
 
 
-  
+
+
   <script src="script.js"></script>
-  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
 </body>
 
 </html>
