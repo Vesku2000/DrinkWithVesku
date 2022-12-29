@@ -107,3 +107,23 @@ function addTextToRedCard(text) {
   var redCard = document.getElementById("red-card");
   redCard.innerHTML = text;
 }
+
+let selectedCategory;
+const categoryList = document.querySelector('.categories');
+
+categoryList.addEventListener('click', (event) => {
+  const target = event.target;
+  if (target.classList.contains('category')) {
+    if (selectedCategory === target) {
+      // Deselect the category if it is already selected
+      selectedCategory = null;
+      target.style.boxShadow = 'none';
+    } else {
+      if (selectedCategory) {
+        selectedCategory.style.boxShadow = 'none';
+      }
+      selectedCategory = target;
+      target.style.boxShadow = '0 0 10px red';
+    }
+  }
+});
