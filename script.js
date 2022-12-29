@@ -75,6 +75,9 @@ const elements = document.querySelectorAll("body *");
 const cardText = document.getElementById("card-text");
 var p = document.createElement("p");
 p.id = "question-text";
+const playerdiv = document.getElementById("attend-div");
+
+
 
 const questions = [
   "What is your favorite color?",
@@ -87,12 +90,14 @@ startGameButton.addEventListener("click", () => {
   elements.forEach((element) => {
     element.classList.add("hidden");
   });
+  playerdiv.style.display = "block";
   document.body.style.backgroundColor = "#FFC0CB"
   redCard.style.display = "block";
   p.textContent = questions[Math.floor(Math.random() * questions.length)];
   redCard.appendChild(p);
   //addTextToRedCard(questions[Math.floor(Math.random() * 3)]);
   console.log(questions[Math.floor(Math.random() * questions.length)]);
+
 });
 
 
