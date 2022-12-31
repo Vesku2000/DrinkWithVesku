@@ -106,6 +106,7 @@ function getAvatar(name, data) {
     // Check if the name matches the current item
     if (item.name === name) {
       // If it does, return the avatar value
+      console.log(item.avatar);
       return item.avatar;
     }
   }
@@ -197,8 +198,10 @@ startGameButton.addEventListener("click", () => {
 
   if(selectedCategory == null){
     document.body.style.backgroundColor = "yellow";
+  }else{
+    document.body.style.backgroundColor = selectedCategory.id;
   }
-  document.body.style.backgroundColor = selectedCategory.id;
+
 });
 
 
@@ -260,6 +263,7 @@ function updateRedCard() {
   oldPlayer.remove();
   const data = JSON.parse(localStorage.getItem("players"));
   const ava = getAvatar(nameText.textContent, data)
+  console.log(ava);
   const playerElement = document.createElement('div');
   playerElement.classList.add('player');
   playerElement.innerHTML = `
