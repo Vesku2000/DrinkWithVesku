@@ -164,7 +164,7 @@ function shufleQuestions() {
 }
 
 const bgColor = "";
-
+//start game
 startGameButton.addEventListener("click", () => {
   elements.forEach((element) => {
     element.classList.add("hidden");
@@ -195,7 +195,9 @@ startGameButton.addEventListener("click", () => {
 
 
 
-  
+  if(selectedCategory == null){
+    document.body.style.backgroundColor = "yellow";
+  }
   document.body.style.backgroundColor = selectedCategory.id;
 });
 
@@ -239,7 +241,12 @@ function updateRedCard() {
   showButton();
   console.log(p.textContent.length);
   playerdiv.style.display = "block";
-  document.body.style.backgroundColor = selectedCategory.id;
+
+  if(selectedCategory == null){
+    document.body.style.backgroundColor = "yeallow";
+  }else{
+    document.body.style.backgroundColor = selectedCategory.id;
+  }
   redCard.style.display = "block";
   const quest = questions.splice(0, 1)[0];
   p.textContent = quest;
