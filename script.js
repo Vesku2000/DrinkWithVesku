@@ -163,6 +163,8 @@ function shufleQuestions() {
   }
 }
 
+const bgColor = "";
+
 startGameButton.addEventListener("click", () => {
   elements.forEach((element) => {
     element.classList.add("hidden");
@@ -171,7 +173,6 @@ startGameButton.addEventListener("click", () => {
   showButton();
   redCard.style.display = "block";
   playerdiv.style.display = "block";
-  document.body.style.backgroundColor = ""
   const quest = questions.splice(0, 1)[0];
   p.textContent = quest;
   console.log(p.textContent.length);
@@ -194,7 +195,7 @@ startGameButton.addEventListener("click", () => {
 
 
 
-
+  
   document.body.style.backgroundColor = selectedCategory.id;
 });
 
@@ -238,7 +239,7 @@ function updateRedCard() {
   showButton();
   console.log(p.textContent.length);
   playerdiv.style.display = "block";
-  document.body.style.backgroundColor = "black";
+  document.body.style.backgroundColor = selectedCategory.id;
   redCard.style.display = "block";
   const quest = questions.splice(0, 1)[0];
   p.textContent = quest;
