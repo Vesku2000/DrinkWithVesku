@@ -154,7 +154,8 @@ const questions = [
 "Have you ever tried to play a video game while drunk and ended up losing miserably?",
 "Have you ever tried to play a board game while drunk and ended up cheating?",
 "Have you ever tried to do a puzzle while drunk and ended up giving up?",
-"Have you ever tried to do a science experiment while drunk and ended up causing a disaster?"
+"Have you ever tried to do a science experiment while drunk and ended up causing a disaster?",
+"when you lost your virginity",
 ];
 
 function shufleQuestions() {
