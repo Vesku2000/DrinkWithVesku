@@ -260,6 +260,7 @@ function updateRedCard() {
   console.log("workkii");
   showButton();
   playerDiv.style.display = "block";
+  //changing bg color
   const color = getRandomColor();
   redCard.style.backgroundColor = color;
   if (selectedCategory == null) {
