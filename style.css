@@ -174,7 +174,7 @@ h2{
     }
 
     #red-card {
-      background-color: red;
+      background-color: "";
       width: 500px;
       height: 300px;
       display: none;
