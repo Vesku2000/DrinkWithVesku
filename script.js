@@ -83,7 +83,20 @@ const avatarImg = document.createElement('img');
 
 nameText.id = "";
 p.id = "question-text";
-const playerdiv = document.getElementById("attend-div");
+const playerDiv = document.getElementById("attend-div");
+
+// Load any existing players from local storage
+
+players.forEach((player) => {
+  const playerElement = document.createElement('div');
+  playerElement.classList.add('playerPoints');
+  playerElement.innerHTML = `
+      <img src="./img/${player.avatar}" class="avatar">
+      <span>${player.name}</span>
+    `;
+  playerDiv.appendChild(playerElement);
+});
+
 
 //getting random player name
 function getRandomPlayerName() {
@@ -167,6 +180,8 @@ function shufleQuestions() {
 
 const bgColor = "";
 //start game
+
+
 startGameButton.addEventListener("click", () => {
   elements.forEach((element) => {
     element.classList.add("hidden");
@@ -175,7 +190,7 @@ startGameButton.addEventListener("click", () => {
   showButton();
   redCard.style.backgroundColor = "red";
   redCard.style.display = "block";
-  playerdiv.style.display = "block";
+  playerDiv.style.display = "block";
   const quest = questions.splice(0, 1)[0];
   p.textContent = quest;
   console.log(p.textContent.length);
@@ -244,8 +259,7 @@ function showButton() {
 function updateRedCard() {
   console.log("workkii");
   showButton();
-  console.log(p.textContent.length);
-  playerdiv.style.display = "block";
+  playerDiv.style.display = "block";
   const color = getRandomColor();
   redCard.style.backgroundColor = color;
   if (selectedCategory == null) {
@@ -253,14 +267,13 @@ function updateRedCard() {
   } else {
     document.body.style.backgroundColor = selectedCategory.id;
   }
-  redCard.style.display = "block";
+  //redCard.style.display = "block";
   const quest = questions.splice(0, 1)[0];
   p.textContent = quest;
   checkTheLongOfQuestion(p.textContent);
   redCard.appendChild(p);
 
   nameText.textContent = getRandomPlayerName();
-  console.log(nameText);
   redCard.appendChild(nameText);
   const oldPlayer = document.querySelectorAll(".player");
   oldPlayer.remove();
@@ -274,6 +287,7 @@ function updateRedCard() {
       
     `;
   redCard.appendChild(playerElement);
+
 
 }
 
