@@ -292,3 +292,9 @@ function checkTheLongOfQuestion(question){
 }
 
 
+
+
+
+
+
+
