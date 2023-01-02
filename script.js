@@ -246,7 +246,8 @@ function updateRedCard() {
   showButton();
   console.log(p.textContent.length);
   playerdiv.style.display = "block";
-  redCard.style.backgroundColor = "green";
+  const color = getRandomColor();
+  redCard.style.backgroundColor = color;
   if (selectedCategory == null) {
     document.body.style.backgroundColor = "yeallow";
   } else {
@@ -290,6 +291,17 @@ function checkTheLongOfQuestion(question) {
     const text = document.getElementById("question-text");
     text.style.fontSize = "40px";
   }
+}
+
+//ger random colorcode
+function getRandomColor() {
+
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
 
 
