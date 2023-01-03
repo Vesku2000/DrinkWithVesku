@@ -190,7 +190,7 @@ startGameButton.addEventListener("click", () => {
   showButton();
   redCard.style.backgroundColor = "red";
   redCard.style.display = "block";
-  playerDiv.style.display = "block";
+  playerDiv.style.display = "flex";
   const quest = questions.splice(0, 1)[0];
   p.textContent = quest;
   console.log(p.textContent.length);

@@ -211,6 +211,8 @@ h2{
   position: relative;
   display: flex;
   text-align: center;
+  align-items: center;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
   flex-direction: row; /* This will make the player divs appear in a row */
