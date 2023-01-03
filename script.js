@@ -260,7 +260,9 @@ function showButton() {
 function updateRedCard() {
   console.log("workkii");
   showButton();
-  playerDiv.style.display = "block";
+  PointsElement.style.display = "flex";
+  redCard.style.display = "block";
+  playerDiv.style.display = "flex";
   //changing bg color
   const color = getRandomColor();
   redCard.style.backgroundColor = color;
@@ -319,5 +321,6 @@ function getRandomColor() {
   }
   return color;
 }
+
 
 
