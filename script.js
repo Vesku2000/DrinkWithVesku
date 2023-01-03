@@ -1,8 +1,10 @@
 const form = document.querySelector('.form');
 const playerList = document.querySelector('.player-list');
 
+
 // Load any existing players from local storage
 const players = JSON.parse(localStorage.getItem('players')) || [];
+
 players.forEach((player) => {
   const playerElement = document.createElement('div');
   playerElement.classList.add('player');
@@ -265,7 +267,7 @@ function showButton() {
 function updateRedCard() {
   console.log("workkii");
   showButton();
-  PointsElement.style.display = "flex";
+  PointsElement.style.display = "block";
   redCard.style.display = "block";
   playerDiv.style.display = "flex";
   //changing bg color
@@ -326,6 +328,8 @@ function getRandomColor() {
   }
   return color;
 }
+
+
 
 
 
