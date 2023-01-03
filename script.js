@@ -212,7 +212,15 @@ startGameButton.addEventListener("click", () => {
   console.log(p.textContent.length);
   redCard.appendChild(p);
   nameText.textContent = getRandomPlayerName();
-  console.log(nameText);
+  console.log(nameText.textContent);
+  for (let i = 0; i < arr.length; i++) {
+  if (arr[i].name === "vesku") {
+    arr[i].points += 6;
+    console.log("dd");
+    localStorage.setItem("players", JSON.stringify(arr));
+  }
+}
+
   redCard.appendChild(nameText);
   const data = JSON.parse(localStorage.getItem("players"));
   const ava = getAvatar(nameText.textContent, data)
