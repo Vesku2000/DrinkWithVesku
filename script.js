@@ -93,6 +93,7 @@ players.forEach((player) => {
   playerElement.innerHTML = `
       <img src="./img/${player.avatar}" class="avatar">
       <span>${player.name}</span>
+      <span class="points">${player.points} points</span>
     `;
   playerDiv.appendChild(playerElement);
 });
@@ -186,6 +187,10 @@ startGameButton.addEventListener("click", () => {
   elements.forEach((element) => {
     element.classList.add("hidden");
   });
+
+
+
+  
   shufleQuestions();
   showButton();
   PointsElement.style.display = "block";
