@@ -4,6 +4,14 @@ const playerList = document.querySelector('.player-list');
 
 // Load any existing players from local storage
 const players = JSON.parse(localStorage.getItem('players')) || [];
+let arr = JSON.parse(localStorage.getItem("players"));
+
+for (let i = 0; i < arr.length; i++) {
+  arr[i].points = 0;
+}
+localStorage.setItem("players", JSON.stringify(arr));
+
+
 
 players.forEach((player) => {
   const playerElement = document.createElement('div');
@@ -208,18 +216,6 @@ startGameButton.addEventListener("click", () => {
   redCard.appendChild(nameText);
   const data = JSON.parse(localStorage.getItem("players"));
   const ava = getAvatar(nameText.textContent, data)
-  const playerElement = document.createElement('div');
-  playerElement.classList.add('player');
-  playerElement.innerHTML = `
-      <img src="./img/${ava}" class="gameAvatar">
-      <span>${name}</span>
-    `;
-  redCard.appendChild(playerElement);
-
-
-
-
-
 
   if (selectedCategory == null) {
     document.body.style.backgroundColor = "yellow";
@@ -291,15 +287,7 @@ function updateRedCard() {
   const data = JSON.parse(localStorage.getItem("players"));
   const ava = getAvatar(nameText.textContent, data)
   console.log(ava);
-  const playerElement = document.createElement('div');
-  playerElement.classList.add('player');
-  playerElement.innerHTML = `
-      <img src="./img/${ava}" class="gameAvatar">
-      
-    `;
-  redCard.appendChild(playerElement);
-
-
+ 
 }
 
 const button = document.getElementById("myButton");
