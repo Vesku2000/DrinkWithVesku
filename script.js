@@ -180,7 +180,7 @@ function shufleQuestions() {
 
 const bgColor = "";
 //start game
-
+const PointsElement = document.getElementById("Points");
 
 startGameButton.addEventListener("click", () => {
   elements.forEach((element) => {
@@ -188,9 +188,10 @@ startGameButton.addEventListener("click", () => {
   });
   shufleQuestions();
   showButton();
+  PointsElement.style.display = "flex";
   redCard.style.backgroundColor = "red";
   redCard.style.display = "block";
-  playerDiv.style.display = "block";
+  playerDiv.style.display = "flex";
   const quest = questions.splice(0, 1)[0];
   p.textContent = quest;
   console.log(p.textContent.length);
@@ -260,6 +261,7 @@ function updateRedCard() {
   console.log("workkii");
   showButton();
   playerDiv.style.display = "block";
+  //changing bg color
   const color = getRandomColor();
   redCard.style.backgroundColor = color;
   if (selectedCategory == null) {
