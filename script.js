@@ -197,10 +197,6 @@ startGameButton.addEventListener("click", () => {
   elements.forEach((element) => {
     element.classList.add("hidden");
   });
-
-
-
-  
   shufleQuestions();
   showButton();
   PointsElement.style.display = "block";
@@ -214,13 +210,13 @@ startGameButton.addEventListener("click", () => {
   nameText.textContent = getRandomPlayerName();
   console.log(nameText.textContent);
   for (let i = 0; i < arr.length; i++) {
-  if (arr[i].name === "vesku") {
+  if (arr[i].name === nameText.textContent) {
     arr[i].points += 6;
-    console.log("dd");
+    console.log(nameText);
     localStorage.setItem("players", JSON.stringify(arr));
   }
 }
-
+  localStorage.getItem("players");
   redCard.appendChild(nameText);
   const data = JSON.parse(localStorage.getItem("players"));
   const ava = getAvatar(nameText.textContent, data)
@@ -289,13 +285,20 @@ function updateRedCard() {
   redCard.appendChild(p);
 
   nameText.textContent = getRandomPlayerName();
+//adding points
+  for (let i = 0; i < arr.length; i++) {
+  if (arr[i].name === nameText.textContent) {
+    arr[i].points += 6;
+    console.log(nameText);
+    localStorage.setItem("players", JSON.stringify(arr));
+  }
+}
   redCard.appendChild(nameText);
   const oldPlayer = document.querySelectorAll(".player");
   oldPlayer.remove();
   const data = JSON.parse(localStorage.getItem("players"));
   const ava = getAvatar(nameText.textContent, data)
-  console.log(ava);
- 
+
 }
 
 const button = document.getElementById("myButton");
