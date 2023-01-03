@@ -188,7 +188,7 @@ startGameButton.addEventListener("click", () => {
   });
   shufleQuestions();
   showButton();
-  PointsElement.style.display = "flex";
+  PointsElement.style.display = "block";
   redCard.style.backgroundColor = "red";
   redCard.style.display = "block";
   playerDiv.style.display = "flex";
