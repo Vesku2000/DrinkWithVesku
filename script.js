@@ -180,7 +180,7 @@ function shufleQuestions() {
 
 const bgColor = "";
 //start game
-
+const PointsElement = document.getElementById("Points");
 
 startGameButton.addEventListener("click", () => {
   elements.forEach((element) => {
@@ -188,6 +188,7 @@ startGameButton.addEventListener("click", () => {
   });
   shufleQuestions();
   showButton();
+  PointsElement.style.display = "flex";
   redCard.style.backgroundColor = "red";
   redCard.style.display = "block";
   playerDiv.style.display = "flex";
