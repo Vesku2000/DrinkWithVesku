@@ -265,6 +265,12 @@ function showButton() {
 }
 
 function updateRedCard() {
+
+  var pointsElement = document.querySelectorAll(".points");
+  console.log(pointsElement.length);
+  // Update the text of the points element
+  pointsElement.innerHTML = "3";
+
   console.log("workkii");
   showButton();
   PointsElement.style.display = "block";
@@ -291,6 +297,7 @@ function updateRedCard() {
     arr[i].points += 6;
     console.log(nameText);
     localStorage.setItem("players", JSON.stringify(arr));
+
   }
 }
   redCard.appendChild(nameText);
@@ -298,6 +305,8 @@ function updateRedCard() {
   oldPlayer.remove();
   const data = JSON.parse(localStorage.getItem("players"));
   const ava = getAvatar(nameText.textContent, data)
+
+  
 
 }
 
