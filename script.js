@@ -103,7 +103,7 @@ players.forEach((player) => {
   playerElement.innerHTML = `
       <img src="./img/${player.avatar}" class="avatar">
       <span>${player.name}</span>
-      <span class="points">${player.points} points</span>
+      <span class="points">${player.points}</span>
     `;
   playerDiv.appendChild(playerElement);
 });
