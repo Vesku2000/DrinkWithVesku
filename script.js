@@ -269,8 +269,24 @@ function updateRedCard() {
   var pointsElement = document.querySelectorAll(".points");
   console.log(pointsElement.length);
   // Update the text of the points element
-  pointsElement.innerHTML = "3";
+  var pointsElements = document.querySelectorAll(".points");
 
+  // Loop through the points elements
+  for (var i = 0; i < pointsElements.length; i++) {
+    // Update the text content of the current element
+    var players = JSON.parse(localStorage.getItem("players"));
+    for (var j = 0; i < players.length; j++) {
+      
+        
+        console.log(players[j]);
+        console.log(players[j].points);
+        pointsElements[i].textContent = players[j].points;
+        
+    }
+
+    
+  }
+  
   console.log("workkii");
   showButton();
   PointsElement.style.display = "block";
