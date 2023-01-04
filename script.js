@@ -276,10 +276,10 @@ function updateRedCard() {
     // Update the text content of the current element
     var players = JSON.parse(localStorage.getItem("players"));
     for (var j = 0; i < players.length; j++) {
-      
+      console.log(players[j].points.value);
         
-        console.log(players[j]);
-        console.log(players[j].points);
+        //console.log(players[j]);
+        //console.log(players[j].points);
         pointsElements[i].textContent = players[j].points;
         
     }
