@@ -270,9 +270,9 @@ function updateRedCard() {
   var pointsElement = document.querySelectorAll(".points");
   console.log(pointsElement.length);
   // Update the text of the points element
-  
+  //const player = localStorage.getItem("players");
 
-  players.forEach((player) => {
+
     
     
       // Get the value from local storage
@@ -282,10 +282,11 @@ function updateRedCard() {
       var span = document.getElementById("points");
     
       // Update the span element's text
-      span.textContent = value;
+      span.textContent = value[0].points;
       console.log(span.textContent);
+
     
-  })
+  
   
   console.log("workkii");
   showButton();
@@ -319,8 +320,7 @@ function updateRedCard() {
   redCard.appendChild(nameText);
   const oldPlayer = document.querySelectorAll(".player");
   oldPlayer.remove();
-  const data = JSON.parse(localStorage.getItem("players"));
-  const ava = getAvatar(nameText.textContent, data)
+
 
   
 
