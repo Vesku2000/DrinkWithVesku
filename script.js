@@ -100,10 +100,11 @@ const playerDiv = document.getElementById("attend-div");
 players.forEach((player) => {
   const playerElement = document.createElement('div');
   playerElement.classList.add('playerPoints');
+
   playerElement.innerHTML = `
       <img src="./img/${player.avatar}" class="avatar">
       <span>${player.name}</span>
-      <span class="points">${player.points}</span>
+      <span class="points" id="points">${player.points}</span>
     `;
   playerDiv.appendChild(playerElement);
 });
@@ -272,15 +273,19 @@ function updateRedCard() {
   
 
   players.forEach((player) => {
-    var pointsElements = document.querySelectorAll(".points");
     
-    pointsElements.innerHTML = `
-        <img src="./img/${player.avatar}" class="avatar">
-        <span>${player.name}</span>
-        <span class="points">${player.points}</span>
-      `;
-    //playerDiv.appendChild(pointsElements);
-  });
+    
+      // Get the value from local storage
+      const value = localStorage.getItem("players");
+    
+      // Get the span element
+      var span = document.getElementById("points");
+    
+      // Update the span element's text
+      span.textContent = value;
+      console.log(span.textContent);
+    
+  })
   
   console.log("workkii");
   showButton();
