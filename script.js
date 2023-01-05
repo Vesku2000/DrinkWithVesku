@@ -265,15 +265,26 @@ function showButton() {
   document.getElementById("myButton").style.display = "block";
 }
 
-function updatepoints(){
+function updatepoints() {
   const attends = JSON.parse(localStorage.getItem("players"));
+  const pointSpans = document.querySelectorAll("#points");
+  if (pointSpans.length !== attends.length) {
+    console.error("Number of point spans does not match number of players");
+    return;
+  }
+  let i = 0;
   for (const player of attends) {
     const name = player.name;
     const points = player.points;
     console.log(`${name} has ${points} points`);
+    pointSpans[i].innerHTML = points;
+    i++;
   }
-  
 }
+
+
+
+
 
 function updateRedCard() {
 
