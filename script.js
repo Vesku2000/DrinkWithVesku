@@ -265,6 +265,16 @@ function showButton() {
   document.getElementById("myButton").style.display = "block";
 }
 
+function updatepoints(){
+  const attends = JSON.parse(localStorage.getItem("players"));
+  for (const player of attends) {
+    const name = player.name;
+    const points = player.points;
+    console.log(`${name} has ${points} points`);
+  }
+  
+}
+
 function updateRedCard() {
 
   var pointsElement = document.querySelectorAll(".points");
@@ -275,15 +285,8 @@ function updateRedCard() {
 
     
     
-      // Get the value from local storage
-      const value = localStorage.getItem("players");
-    
-      // Get the span element
-      var span = document.getElementById("points");
-    
-      // Update the span element's text
-      span.textContent = value[0].points;
-      console.log(span.textContent);
+updatepoints();
+  
 
     
   
