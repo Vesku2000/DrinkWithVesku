@@ -148,7 +148,7 @@ function getAvatar(name, data) {
 
 
 
-const questions = [
+const questionsSport = [
   "What is your favorite color?",
   "What is your favorite food?",
   "What is your favorite hobby?",
@@ -185,6 +185,9 @@ const questions = [
   "Have you ever tried to do a science experiment while drunk and ended up causing a disaster?",
   "when you lost your virginity",
 ];
+const questions = [];
+const questionsDrunk = [];
+const questionsHomeParty = [];
 
 function shufleQuestions() {
   for (let i = questions.length - 1; i > 0; i--) {
@@ -198,6 +201,11 @@ const bgColor = "";
 const PointsElement = document.getElementById("Points");
 
 startGameButton.addEventListener("click", () => {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i].points = 0;
+  }
+  localStorage.setItem("players", JSON.stringify(arr));
+
   elements.forEach((element) => {
     element.classList.add("hidden");
   });
