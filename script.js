@@ -267,9 +267,6 @@ categoryList.addEventListener('click', (event) => {
       }
       selectedCategory = target;
       target.style.boxShadow = '0 0 10px red';
-
-
-
     }
   }
 });
