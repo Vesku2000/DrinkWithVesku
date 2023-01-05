@@ -87,6 +87,9 @@ const cardText = document.getElementById("card-text");
 var p = document.createElement("p");
 const nameText = document.createElement("p");
 const avatarImg = document.createElement('img');
+const pointText = document.createElement("p");
+
+
 
 
 
@@ -320,13 +323,13 @@ function updateRedCard() {
     const RandomPoints = Math.floor(Math.random() * 5);
     arr[i].points += RandomPoints;
     console.log(RandomPoints);
-   
-    console.log(nameText);
+    pointText.textContent = RandomPoints;
     localStorage.setItem("players", JSON.stringify(arr));
 
   }
 }
   redCard.appendChild(nameText);
+  redCard.appendChild(pointText);
   const oldPlayer = document.querySelectorAll(".player");
   oldPlayer.remove();
 
