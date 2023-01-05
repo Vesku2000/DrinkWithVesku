@@ -210,11 +210,16 @@ startGameButton.addEventListener("click", () => {
   redCard.appendChild(p);
   nameText.textContent = getRandomPlayerName();
   console.log(nameText.textContent);
-  for (let i = 0; i < arr.length; i++) {
+//adding points
+for (let i = 0; i < arr.length; i++) {
   if (arr[i].name === nameText.textContent) {
-    arr[i].points += 6;
+    const RandomPoints = Math.floor(Math.random() * 5);
+    arr[i].points += RandomPoints;
+    console.log(RandomPoints);
+   
     console.log(nameText);
     localStorage.setItem("players", JSON.stringify(arr));
+
   }
 }
   localStorage.getItem("players");
@@ -276,7 +281,6 @@ function updatepoints() {
   for (const player of attends) {
     const name = player.name;
     const points = player.points;
-    console.log(`${name} has ${points} points`);
     pointSpans[i].innerHTML = points;
     i++;
   }
@@ -287,37 +291,25 @@ function updatepoints() {
 
 
 function updateRedCard() {
-
-  var pointsElement = document.querySelectorAll(".points");
-  console.log(pointsElement.length);
-  // Update the text of the points element
-  //const player = localStorage.getItem("players");
-
-
-    
-    
-updatepoints();
-  
-
-    
-  
-  
-  console.log("workkii");
+  updatepoints();
   showButton();
+  //styling all right 
   PointsElement.style.display = "block";
   redCard.style.display = "block";
   playerDiv.style.display = "flex";
   //changing bg color
   const color = getRandomColor();
   redCard.style.backgroundColor = color;
+  //chek is category selected or not
   if (selectedCategory == null) {
     document.body.style.backgroundColor = "yeallow";
   } else {
     document.body.style.backgroundColor = selectedCategory.id;
   }
-  //redCard.style.display = "block";
+  //selecting quest and deleting it from array
   const quest = questions.splice(0, 1)[0];
   p.textContent = quest;
+  //checking the leng od the quest and rezise it to fit
   checkTheLongOfQuestion(p.textContent);
   redCard.appendChild(p);
 
@@ -325,7 +317,10 @@ updatepoints();
 //adding points
   for (let i = 0; i < arr.length; i++) {
   if (arr[i].name === nameText.textContent) {
-    arr[i].points += 6;
+    const RandomPoints = Math.floor(Math.random() * 5);
+    arr[i].points += RandomPoints;
+    console.log(RandomPoints);
+   
     console.log(nameText);
     localStorage.setItem("players", JSON.stringify(arr));
 
