@@ -87,6 +87,9 @@ const cardText = document.getElementById("card-text");
 var p = document.createElement("p");
 const nameText = document.createElement("p");
 const avatarImg = document.createElement('img');
+const pointText = document.createElement("p");
+
+
 
 
 
@@ -100,10 +103,11 @@ const playerDiv = document.getElementById("attend-div");
 players.forEach((player) => {
   const playerElement = document.createElement('div');
   playerElement.classList.add('playerPoints');
+
   playerElement.innerHTML = `
       <img src="./img/${player.avatar}" class="avatar">
       <span>${player.name}</span>
-      <span class="points">${player.points} points</span>
+      <span class="points" id="points">${player.points}</span>
     `;
   playerDiv.appendChild(playerElement);
 });
@@ -144,7 +148,7 @@ function getAvatar(name, data) {
 
 
 
-const questions = [
+const questionsSport = [
   "What is your favorite color?",
   "What is your favorite food?",
   "What is your favorite hobby?",
@@ -181,6 +185,9 @@ const questions = [
   "Have you ever tried to do a science experiment while drunk and ended up causing a disaster?",
   "when you lost your virginity",
 ];
+const questions = [];
+const questionsDrunk = [];
+const questionsHomeParty = [];
 
 function shufleQuestions() {
   for (let i = questions.length - 1; i > 0; i--) {
@@ -194,6 +201,11 @@ const bgColor = "";
 const PointsElement = document.getElementById("Points");
 
 startGameButton.addEventListener("click", () => {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i].points = 0;
+  }
+  localStorage.setItem("players", JSON.stringify(arr));
+
   elements.forEach((element) => {
     element.classList.add("hidden");
   });
@@ -209,11 +221,16 @@ startGameButton.addEventListener("click", () => {
   redCard.appendChild(p);
   nameText.textContent = getRandomPlayerName();
   console.log(nameText.textContent);
-  for (let i = 0; i < arr.length; i++) {
+//adding points
+for (let i = 0; i < arr.length; i++) {
   if (arr[i].name === nameText.textContent) {
-    arr[i].points += 6;
+    const RandomPoints = Math.floor(Math.random() * 5);
+    arr[i].points += RandomPoints;
+    console.log(RandomPoints);
+   
     console.log(nameText);
     localStorage.setItem("players", JSON.stringify(arr));
+
   }
 }
   localStorage.getItem("players");
@@ -250,9 +267,6 @@ categoryList.addEventListener('click', (event) => {
       }
       selectedCategory = target;
       target.style.boxShadow = '0 0 10px red';
-
-
-
     }
   }
 });
@@ -264,23 +278,46 @@ function showButton() {
   document.getElementById("myButton").style.display = "block";
 }
 
+function updatepoints() {
+  const attends = JSON.parse(localStorage.getItem("players"));
+  const pointSpans = document.querySelectorAll("#points");
+  if (pointSpans.length !== attends.length) {
+    console.error("Number of point spans does not match number of players");
+    return;
+  }
+  let i = 0;
+  for (const player of attends) {
+    const name = player.name;
+    const points = player.points;
+    pointSpans[i].innerHTML = points;
+    i++;
+  }
+}
+
+
+
+
+
 function updateRedCard() {
-  console.log("workkii");
+  updatepoints();
   showButton();
+  //styling all right 
   PointsElement.style.display = "block";
   redCard.style.display = "block";
   playerDiv.style.display = "flex";
   //changing bg color
   const color = getRandomColor();
   redCard.style.backgroundColor = color;
+  //chek is category selected or not
   if (selectedCategory == null) {
     document.body.style.backgroundColor = "yeallow";
   } else {
     document.body.style.backgroundColor = selectedCategory.id;
   }
-  //redCard.style.display = "block";
+  //selecting quest and deleting it from array
   const quest = questions.splice(0, 1)[0];
   p.textContent = quest;
+  //checking the leng od the quest and rezise it to fit
   checkTheLongOfQuestion(p.textContent);
   redCard.appendChild(p);
 
@@ -288,16 +325,21 @@ function updateRedCard() {
 //adding points
   for (let i = 0; i < arr.length; i++) {
   if (arr[i].name === nameText.textContent) {
-    arr[i].points += 6;
-    console.log(nameText);
+    const RandomPoints = Math.floor(Math.random() * 5);
+    arr[i].points += RandomPoints;
+    console.log(RandomPoints);
+    pointText.textContent = RandomPoints;
     localStorage.setItem("players", JSON.stringify(arr));
+
   }
 }
   redCard.appendChild(nameText);
+  redCard.appendChild(pointText);
   const oldPlayer = document.querySelectorAll(".player");
   oldPlayer.remove();
-  const data = JSON.parse(localStorage.getItem("players"));
-  const ava = getAvatar(nameText.textContent, data)
+
+
+  
 
 }
 

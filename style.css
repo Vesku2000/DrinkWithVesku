@@ -198,6 +198,8 @@ h2{
       font-size: "";
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding-left: 1rem;
+    padding-right: 1rem;
     }
     .gameAvatar {
       display: flex;
@@ -231,11 +233,16 @@ h2{
   border-radius: 15px;
 }
 
+.playerPoints span{
+  padding-left: 0.6rem;
+  padding-right: 0.2rem;
+}
+
 
 
     #myButton {
       position: absolute;
-      bottom: 25%;
+      bottom: 20%;
       left: 50%;
       transform: translateX(-50%);
       font-size: 20px;  /* increase the font size */
@@ -244,6 +251,7 @@ h2{
       border: none;  /* remove the default border */
       border-radius: 5px;  /* add rounded corners */
       cursor: pointer;  /* change the cursor when hovering over the button */
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
     }
     
     #myButton:hover {
