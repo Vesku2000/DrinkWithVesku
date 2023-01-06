@@ -148,7 +148,7 @@ function getAvatar(name, data) {
 
 
 
-const questionsSport = [
+const questions = [
   "What is your favorite color?",
   "What is your favorite food?",
   "What is your favorite hobby?",
@@ -185,9 +185,67 @@ const questionsSport = [
   "Have you ever tried to do a science experiment while drunk and ended up causing a disaster?",
   "when you lost your virginity",
 ];
-const questions = [];
-const questionsDrunk = [];
-const questionsHomeParty = [];
+const questionsSport = ["Has any Finnish hockey player won the Stanley Cup?",
+"Has any Finnish football player won the World Cup?",
+"Who is the most successful Finnish hockey player of all time?",
+"Who is the most successful Finnish football player of all time?",
+"Have any Finnish hockey players won the Hart Trophy as NHL MVP?",
+"Have any Finnish football players won the Ballon d'Or?",
+"How many Finnish hockey players have been inducted into the Hockey Hall of Fame?",
+"How many Finnish football players have been inducted into the Football Hall of Fame?",
+"Have any Finnish hockey players won the Olympic gold medal in ice hockey?",
+"Have any Finnish football players won the European Championship?",
+     "Name one country that has won the most medals in the Winter Olympics.",
+"Name one country that has won the most medals in the Summer Olympics.",
+"Name one country that has the most World Cup victories in soccer.",
+"Name one athlete who has won the most Grand Slams in tennis.",
+"Name one athlete who has won the most NBA championships.",
+"Name one athlete who has won the most Super Bowls.",
+"Name one athlete who has won the most Olympic gold medals.",
+"Name one athlete who has won the most Tour de France titles.",
+"Name one athlete who has won the most Formula 1 championships.",
+"Name one athlete who has won the most Wimbledon titles.",            
+        ];
+const questionsDrunk = ["What is the capital of Kazakhstan?",
+"How many legs does a octopus have?",
+"What is the highest mountain in the solar system?",
+"Who wrote the book 'War and Peace'?",
+"Who invented the lightbulb?",
+"How many sides does a hexagon have?",
+"What is the national animal of Scotland?",
+"What is the largest ocean on Earth?",
+"How many bones are in the human body?",
+"What is the currency of Japan?",
+"Who is the current Prime Minister of Canada?",
+"What is the capital of Australia?",
+"How many rings are on the Olympic flag?",
+"What is the capital of Brazil?",
+"What is the capital of South Africa?",
+"How many planets are in the Solar System?",
+"What is the capital of Russia?",
+"What is the capital of France?",
+"What is the capital of China?",
+"What is the capital of India?",];
+const questionsHomeParty = ["What is the definition of the word 'taboo'?",
+"What are some common taboo topics in society?",
+"What is the origin of the word 'taboo'?",
+"What are some examples of taboo behaviors in different cultures?",
+"What is the social or cultural significance of taboo?",
+"What are some common taboo words or phrases?",
+"What are some taboo subjects in the media?",
+"What are some taboo topics in politics?",
+"What are some taboo topics in religion?",
+"What are some taboo topics in relationships?",
+"What are some taboo topics in the workplace?",
+"What are some taboo topics in education?",
+"What are some taboo topics in health and medicine?",
+"What are some taboo topics in science and technology?",
+"What are some taboo topics in the arts?",
+"What are some taboo topics in the environment and nature?",
+"What are some taboo topics in sports?",
+"What are some taboo topics in food and nutrition?",
+"What are some taboo topics in fashion and beauty?",
+"What are some taboo topics in finance and business?",];
 
 function SelectQuestions(id){
   if(id == "#FFC0CB"){
