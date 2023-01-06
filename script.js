@@ -246,25 +246,31 @@ const questionsHomeParty = ["What is the definition of the word 'taboo'?",
 "What are some taboo topics in food and nutrition?",
 "What are some taboo topics in fashion and beauty?",
 "What are some taboo topics in finance and business?",];
+const selectedQuestionsID = [];
 
 function SelectQuestions(id){
   if(id == "#FFC0CB"){
     console.log("homeparty selected");
+    selectedQuestionsID = questions;
   }else if(id == "#ADD8E6"){
     console.log("party selected");
+    selectedQuestionsID.push(questionsDrunk);
   }else if(id == "#F0E68C"){
     console.log("sport selected");
+    selectedQuestionsID.push(questionsSport);
   }else if(id == "#FFE4E1"){
     console.log("tequila selected");
+    selectedQuestionsID = questionsHomeParty;
   }else{
     console.log("category not selected");
   }
+  
 }
 
-function shufleQuestions() {
-  for (let i = questions.length - 1; i > 0; i--) {
+function shufleQuestions(selectedQuestions) {
+  for (let i = selectedQuestions.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
-    [questions[i], questions[j]] = [questions[j], questions[i]];
+    [selectedQuestions[i], selectedQuestions[j]] = [selectedQuestions[j], selectedQuestions[i]];
   }
 }
 
@@ -282,7 +288,15 @@ startGameButton.addEventListener("click", () => {
   elements.forEach((element) => {
     element.classList.add("hidden");
   });
-  shufleQuestions();
+
+  if (selectedCategory == null) {
+    document.body.style.backgroundColor = "yellow";
+  } else {
+    document.body.style.backgroundColor = selectedCategory.id;
+    SelectQuestions(selectedCategory.id);
+  }
+  
+  shufleQuestions(selectedQuestionsID);
   showButton();
   PointsElement.style.display = "block";
   redCard.style.backgroundColor = "red";
@@ -311,12 +325,7 @@ for (let i = 0; i < arr.length; i++) {
   const data = JSON.parse(localStorage.getItem("players"));
   const ava = getAvatar(nameText.textContent, data)
 
-  if (selectedCategory == null) {
-    document.body.style.backgroundColor = "yellow";
-  } else {
-    document.body.style.backgroundColor = selectedCategory.id;
-    SelectQuestions(selectedCategory.id);
-  }
+  
 
 });
 
