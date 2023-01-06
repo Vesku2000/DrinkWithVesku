@@ -298,12 +298,13 @@ startGameButton.addEventListener("click", () => {
   }
   SelectQuestions(selectedCategory.id);
   
-  shufleQuestions(selectedQuestionsID);
+  const shufledQuest = shufleQuestions(selectedQuestionsID);
   showButton();
   PointsElement.style.display = "block";
   redCard.style.backgroundColor = "red";
   redCard.style.display = "block";
   playerDiv.style.display = "flex";
+  
   const quest = questions.splice(0, 1)[0];
   p.textContent = quest;
   console.log(p.textContent.length);
