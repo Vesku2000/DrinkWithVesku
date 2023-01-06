@@ -258,12 +258,14 @@ function SelectQuestions(id){
   }else if(id == "#F0E68C"){
     console.log("sport selected");
     selectedQuestionsID.push(questionsSport);
+    console.log(selectedQuestionsID);
   }else if(id == "#FFE4E1"){
     console.log("tequila selected");
     selectedQuestionsID = questionsHomeParty;
   }else{
     console.log("category not selected");
   }
+  return selectedQuestionsID;
   
 }
 
@@ -293,8 +295,8 @@ startGameButton.addEventListener("click", () => {
     document.body.style.backgroundColor = "yellow";
   } else {
     document.body.style.backgroundColor = selectedCategory.id;
-    SelectQuestions(selectedCategory.id);
   }
+  SelectQuestions(selectedCategory.id);
   
   shufleQuestions(selectedQuestionsID);
   showButton();
