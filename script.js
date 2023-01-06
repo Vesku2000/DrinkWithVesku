@@ -190,7 +190,17 @@ const questionsDrunk = [];
 const questionsHomeParty = [];
 
 function SelectQuestions(id){
-  if(id == )
+  if(id == "#FFC0CB"){
+    console.log("homeparty selected");
+  }else if(id == "#ADD8E6"){
+    console.log("party selected");
+  }else if(id == "#F0E68C"){
+    console.log("sport selected");
+  }else if(id == "#FFE4E1"){
+    console.log("tequila selected");
+  }else{
+    console.log("category not selected");
+  }
 }
 
 function shufleQuestions() {
@@ -208,6 +218,7 @@ startGameButton.addEventListener("click", () => {
   for (let i = 0; i < arr.length; i++) {
     arr[i].points = 0;
   }
+  
   localStorage.setItem("players", JSON.stringify(arr));
 
   elements.forEach((element) => {
@@ -246,6 +257,7 @@ for (let i = 0; i < arr.length; i++) {
     document.body.style.backgroundColor = "yellow";
   } else {
     document.body.style.backgroundColor = selectedCategory.id;
+    SelectQuestions(selectedCategory.id);
   }
 
 });
