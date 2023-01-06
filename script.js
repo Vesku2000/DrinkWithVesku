@@ -189,6 +189,10 @@ const questions = [];
 const questionsDrunk = [];
 const questionsHomeParty = [];
 
+function SelectQuestions(id){
+  if(id == )
+}
+
 function shufleQuestions() {
   for (let i = questions.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
