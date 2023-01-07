@@ -265,14 +265,15 @@ function SelectQuestions(id){
   }else{
     console.log("category not selected");
   }
+  console.log(selectedQuestionsID);
   return selectedQuestionsID;
   
 }
 
-function shufleQuestions(selectedQuestions) {
-  for (let i = selectedQuestions.length - 1; i > 0; i--) {
+function shufleQuestions(selectedQuestionsID) {
+  for (let i = selectedQuestionsID.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
-    [selectedQuestions[i], selectedQuestions[j]] = [selectedQuestions[j], selectedQuestions[i]];
+    [selectedQuestionsID[i], selectedQuestionsID[j]] = [selectedQuestionsID[j], selectedQuestionsID[i]];
   }
 }
 
@@ -298,14 +299,14 @@ startGameButton.addEventListener("click", () => {
   }
   SelectQuestions(selectedCategory.id);
   
-  const shufledQuest = shufleQuestions(selectedQuestionsID);
+  shufleQuestions(selectedQuestionsID);
   showButton();
   PointsElement.style.display = "block";
   redCard.style.backgroundColor = "red";
   redCard.style.display = "block";
   playerDiv.style.display = "flex";
   
-  const quest = questions.splice(0, 1)[0];
+  const quest = selectedQuestionsID.splice(0, 1)[0];
   p.textContent = quest;
   console.log(p.textContent.length);
   redCard.appendChild(p);
