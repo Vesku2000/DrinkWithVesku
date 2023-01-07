@@ -251,7 +251,7 @@ const selectedQuestionsID = [];
 function SelectQuestions(id){
   if(id == "#FFC0CB"){
     console.log("homeparty selected");
-    selectedQuestionsID = questions;
+    selectedQuestionsID.push(questions);
   }else if(id == "#ADD8E6"){
     console.log("party selected");
     selectedQuestionsID.push(questionsDrunk);
@@ -261,7 +261,7 @@ function SelectQuestions(id){
     console.log(selectedQuestionsID);
   }else if(id == "#FFE4E1"){
     console.log("tequila selected");
-    selectedQuestionsID = questionsHomeParty;
+    selectedQuestionsID.push(questions);
   }else{
     console.log("category not selected");
   }
