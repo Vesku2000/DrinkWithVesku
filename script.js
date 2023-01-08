@@ -248,20 +248,22 @@ const questionsHomeParty = ["What is the definition of the word 'taboo'?",
 "What are some taboo topics in finance and business?",];
 const selectedQuestionsID = [];
 
+
 function SelectQuestions(id){
   if(id == "#FFC0CB"){
     console.log("homeparty selected");
-    selectedQuestionsID.push(questions);
+    const homeparty = true;
   }else if(id == "#ADD8E6"){
     console.log("party selected");
-    selectedQuestionsID.push(questionsDrunk);
+    const party = true;
   }else if(id == "#F0E68C"){
     console.log("sport selected");
-    selectedQuestionsID.push(questionsSport);
+    const sport = false;
+    return sport = true;
     console.log(selectedQuestionsID);
   }else if(id == "#FFE4E1"){
     console.log("tequila selected");
-    selectedQuestionsID.push(questions);
+    const tequila = true;
   }else{
     console.log("category not selected");
   }
@@ -306,7 +308,21 @@ startGameButton.addEventListener("click", () => {
   redCard.style.display = "block";
   playerDiv.style.display = "flex";
   
-  const quest = selectedQuestionsID.splice(0, 1)[0];
+  if(sport){
+    console.log("sport toimii")
+    const quest = questionsSport.splice(0, 1)[0];
+    return quest;
+  }else if(party){
+    const quest = questionsDrunk.splice(0, 1)[0];
+    return quest;
+  }else if(homeparty){
+    const quest = questionsHomeParty.splice(0, 1)[0];
+    return quest;
+  }else if(tequila){
+    const quest = questions.splice(0, 1)[0];
+    return quest;
+  }
+  
   p.textContent = quest;
   console.log(p.textContent.length);
   redCard.appendChild(p);
