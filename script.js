@@ -304,6 +304,7 @@ startGameButton.addEventListener("click", () => {
 
   shufleQuestions(selectedQuestionsID);
   showButton();
+
   PointsElement.style.display = "block";
   redCard.style.backgroundColor = "red";
   redCard.style.display = "block";
@@ -315,17 +316,17 @@ startGameButton.addEventListener("click", () => {
 
 
   //p.textContent = quest;
-  console.log(p.textContent.length);
+
   redCard.appendChild(p);
   nameText.textContent = getRandomPlayerName();
   console.log(nameText.textContent);
   //adding points
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].name === nameText.textContent) {
-      const RandomPoints = Math.floor(Math.random() * 5);
+      const RandomPoints = Math.floor(Math.random() * 5 + 1);
       arr[i].points += RandomPoints;
       console.log(RandomPoints);
-
+      pointText.textContent = RandomPoints;
       console.log(nameText);
       localStorage.setItem("players", JSON.stringify(arr));
 
@@ -333,6 +334,7 @@ startGameButton.addEventListener("click", () => {
   }
   localStorage.getItem("players");
   redCard.appendChild(nameText);
+  redCard.appendChild(pointText);
   const data = JSON.parse(localStorage.getItem("players"));
   const ava = getAvatar(nameText.textContent, data)
 
@@ -441,7 +443,7 @@ function updateRedCard() {
   //adding points
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].name === nameText.textContent) {
-      const RandomPoints = Math.floor(Math.random() * 5);
+      const RandomPoints = Math.floor(Math.random() * 5 + 1);
       arr[i].points += RandomPoints;
       console.log(RandomPoints);
       pointText.textContent = RandomPoints;
