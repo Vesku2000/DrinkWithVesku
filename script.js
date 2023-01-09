@@ -414,7 +414,7 @@ function updateRedCard() {
   } else if (selectedCategory.id == "#F0E68C") {
     console.log("sport selected");
     const quest = questions.splice(0, 1)[0];
-    return quest;
+    p.textContent = quest;
 
   } else if (selectedCategory.id == "#FFE4E1") {
     console.log("tequila selected");
@@ -424,7 +424,7 @@ function updateRedCard() {
   }
   //selecting quest and deleting it from array
 
-  p.textContent = quest;
+
   //checking the leng od the quest and rezise it to fit
   checkTheLongOfQuestion(p.textContent);
   redCard.appendChild(p);
