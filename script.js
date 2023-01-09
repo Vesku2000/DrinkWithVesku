@@ -283,17 +283,21 @@ startGameButton.addEventListener("click", () => {
 
   if (selectedCategory.id == "#FFC0CB") {
     console.log("homeparty selected");
-
+    const quest = questionsHomeParty.splice(0, 1)[0];
+    p.textContent = quest;
   } else if (selectedCategory.id == "#ADD8E6") {
     console.log("party selected");
-
+    const quest = questions.splice(0, 1)[0];
+    p.textContent = quest;
   } else if (selectedCategory.id == "#F0E68C") {
     console.log("sport selected");
-
+    const quest = questionsSport.splice(0, 1)[0];
+    p.textContent = quest;
     console.log(selectedQuestionsID);
   } else if (selectedCategory.id == "#FFE4E1") {
     console.log("tequila selected");
-
+    const quest = questionsDrunk.splice(0, 1)[0];
+    p.textContent = quest;
   } else {
     console.log("category not selected");
   }
@@ -307,10 +311,10 @@ startGameButton.addEventListener("click", () => {
 
 
 
-  const quest = questionsSport.splice(0, 1)[0];
 
 
-  p.textContent = quest;
+
+  //p.textContent = quest;
   console.log(p.textContent.length);
   redCard.appendChild(p);
   nameText.textContent = getRandomPlayerName();
@@ -407,9 +411,12 @@ function updateRedCard() {
 
   if (selectedCategory.id == "#FFC0CB") {
     console.log("homeparty selected");
-
+    const quest = questions.splice(0, 1)[0];
+    p.textContent = quest;
   } else if (selectedCategory.id == "#ADD8E6") {
     console.log("party selected");
+    const quest = questionsHomeParty.splice(0, 1)[0];
+    p.textContent = quest;
 
   } else if (selectedCategory.id == "#F0E68C") {
     console.log("sport selected");
@@ -418,7 +425,8 @@ function updateRedCard() {
 
   } else if (selectedCategory.id == "#FFE4E1") {
     console.log("tequila selected");
-
+    const quest = questionsDrunk.splice(0, 1)[0];
+    p.textContent = quest;
   } else {
     console.log("category not selected");
   }
