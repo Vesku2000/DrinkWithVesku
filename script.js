@@ -186,91 +186,70 @@ const questions = [
   "when you lost your virginity",
 ];
 const questionsSport = ["Has any Finnish hockey player won the Stanley Cup?",
-"Has any Finnish football player won the World Cup?",
-"Who is the most successful Finnish hockey player of all time?",
-"Who is the most successful Finnish football player of all time?",
-"Have any Finnish hockey players won the Hart Trophy as NHL MVP?",
-"Have any Finnish football players won the Ballon d'Or?",
-"How many Finnish hockey players have been inducted into the Hockey Hall of Fame?",
-"How many Finnish football players have been inducted into the Football Hall of Fame?",
-"Have any Finnish hockey players won the Olympic gold medal in ice hockey?",
-"Have any Finnish football players won the European Championship?",
-     "Name one country that has won the most medals in the Winter Olympics.",
-"Name one country that has won the most medals in the Summer Olympics.",
-"Name one country that has the most World Cup victories in soccer.",
-"Name one athlete who has won the most Grand Slams in tennis.",
-"Name one athlete who has won the most NBA championships.",
-"Name one athlete who has won the most Super Bowls.",
-"Name one athlete who has won the most Olympic gold medals.",
-"Name one athlete who has won the most Tour de France titles.",
-"Name one athlete who has won the most Formula 1 championships.",
-"Name one athlete who has won the most Wimbledon titles.",            
-        ];
+  "Has any Finnish football player won the World Cup?",
+  "Who is the most successful Finnish hockey player of all time?",
+  "Who is the most successful Finnish football player of all time?",
+  "Have any Finnish hockey players won the Hart Trophy as NHL MVP?",
+  "Have any Finnish football players won the Ballon d'Or?",
+  "How many Finnish hockey players have been inducted into the Hockey Hall of Fame?",
+  "How many Finnish football players have been inducted into the Football Hall of Fame?",
+  "Have any Finnish hockey players won the Olympic gold medal in ice hockey?",
+  "Have any Finnish football players won the European Championship?",
+  "Name one country that has won the most medals in the Winter Olympics.",
+  "Name one country that has won the most medals in the Summer Olympics.",
+  "Name one country that has the most World Cup victories in soccer.",
+  "Name one athlete who has won the most Grand Slams in tennis.",
+  "Name one athlete who has won the most NBA championships.",
+  "Name one athlete who has won the most Super Bowls.",
+  "Name one athlete who has won the most Olympic gold medals.",
+  "Name one athlete who has won the most Tour de France titles.",
+  "Name one athlete who has won the most Formula 1 championships.",
+  "Name one athlete who has won the most Wimbledon titles.",
+];
 const questionsDrunk = ["What is the capital of Kazakhstan?",
-"How many legs does a octopus have?",
-"What is the highest mountain in the solar system?",
-"Who wrote the book 'War and Peace'?",
-"Who invented the lightbulb?",
-"How many sides does a hexagon have?",
-"What is the national animal of Scotland?",
-"What is the largest ocean on Earth?",
-"How many bones are in the human body?",
-"What is the currency of Japan?",
-"Who is the current Prime Minister of Canada?",
-"What is the capital of Australia?",
-"How many rings are on the Olympic flag?",
-"What is the capital of Brazil?",
-"What is the capital of South Africa?",
-"How many planets are in the Solar System?",
-"What is the capital of Russia?",
-"What is the capital of France?",
-"What is the capital of China?",
-"What is the capital of India?",];
+  "How many legs does a octopus have?",
+  "What is the highest mountain in the solar system?",
+  "Who wrote the book 'War and Peace'?",
+  "Who invented the lightbulb?",
+  "How many sides does a hexagon have?",
+  "What is the national animal of Scotland?",
+  "What is the largest ocean on Earth?",
+  "How many bones are in the human body?",
+  "What is the currency of Japan?",
+  "Who is the current Prime Minister of Canada?",
+  "What is the capital of Australia?",
+  "How many rings are on the Olympic flag?",
+  "What is the capital of Brazil?",
+  "What is the capital of South Africa?",
+  "How many planets are in the Solar System?",
+  "What is the capital of Russia?",
+  "What is the capital of France?",
+  "What is the capital of China?",
+  "What is the capital of India?",];
 const questionsHomeParty = ["What is the definition of the word 'taboo'?",
-"What are some common taboo topics in society?",
-"What is the origin of the word 'taboo'?",
-"What are some examples of taboo behaviors in different cultures?",
-"What is the social or cultural significance of taboo?",
-"What are some common taboo words or phrases?",
-"What are some taboo subjects in the media?",
-"What are some taboo topics in politics?",
-"What are some taboo topics in religion?",
-"What are some taboo topics in relationships?",
-"What are some taboo topics in the workplace?",
-"What are some taboo topics in education?",
-"What are some taboo topics in health and medicine?",
-"What are some taboo topics in science and technology?",
-"What are some taboo topics in the arts?",
-"What are some taboo topics in the environment and nature?",
-"What are some taboo topics in sports?",
-"What are some taboo topics in food and nutrition?",
-"What are some taboo topics in fashion and beauty?",
-"What are some taboo topics in finance and business?",];
+  "What are some common taboo topics in society?",
+  "What is the origin of the word 'taboo'?",
+  "What are some examples of taboo behaviors in different cultures?",
+  "What is the social or cultural significance of taboo?",
+  "What are some common taboo words or phrases?",
+  "What are some taboo subjects in the media?",
+  "What are some taboo topics in politics?",
+  "What are some taboo topics in religion?",
+  "What are some taboo topics in relationships?",
+  "What are some taboo topics in the workplace?",
+  "What are some taboo topics in education?",
+  "What are some taboo topics in health and medicine?",
+  "What are some taboo topics in science and technology?",
+  "What are some taboo topics in the arts?",
+  "What are some taboo topics in the environment and nature?",
+  "What are some taboo topics in sports?",
+  "What are some taboo topics in food and nutrition?",
+  "What are some taboo topics in fashion and beauty?",
+  "What are some taboo topics in finance and business?",];
 const selectedQuestionsID = [];
 
 
-function SelectQuestions(id){
-  if(id == "#FFC0CB"){
-    console.log("homeparty selected");
-    const homeparty = true;
-  }else if(id == "#ADD8E6"){
-    console.log("party selected");
-    const party = true;
-  }else if(id == "#F0E68C"){
-    console.log("sport selected");
-    const sport = false;
-    return sport = true;
-    console.log(selectedQuestionsID);
-  }else if(id == "#FFE4E1"){
-    console.log("tequila selected");
-    const tequila = true;
-  }else{
-    console.log("category not selected");
-  }
-  console.log(selectedQuestionsID);
-  return selectedQuestionsID;
-  
-}
+
 
 function shufleQuestions(selectedQuestionsID) {
   for (let i = selectedQuestionsID.length - 1; i > 0; i--) {
@@ -280,14 +259,15 @@ function shufleQuestions(selectedQuestionsID) {
 }
 
 const bgColor = "";
-//start game
-const PointsElement = document.getElementById("Points");
 
+const PointsElement = document.getElementById("Points");
+//! START GAME
+//----------------------------------------------------------
 startGameButton.addEventListener("click", () => {
   for (let i = 0; i < arr.length; i++) {
     arr[i].points = 0;
   }
-  
+
   localStorage.setItem("players", JSON.stringify(arr));
 
   elements.forEach((element) => {
@@ -299,53 +279,60 @@ startGameButton.addEventListener("click", () => {
   } else {
     document.body.style.backgroundColor = selectedCategory.id;
   }
-  SelectQuestions(selectedCategory.id);
-  
+  //SelectQuestions(selectedCategory.id);
+
+  if (selectedCategory.id == "#FFC0CB") {
+    console.log("homeparty selected");
+
+  } else if (selectedCategory.id == "#ADD8E6") {
+    console.log("party selected");
+
+  } else if (selectedCategory.id == "#F0E68C") {
+    console.log("sport selected");
+
+    console.log(selectedQuestionsID);
+  } else if (selectedCategory.id == "#FFE4E1") {
+    console.log("tequila selected");
+
+  } else {
+    console.log("category not selected");
+  }
+
   shufleQuestions(selectedQuestionsID);
   showButton();
   PointsElement.style.display = "block";
   redCard.style.backgroundColor = "red";
   redCard.style.display = "block";
   playerDiv.style.display = "flex";
-  
-  if(sport){
-    console.log("sport toimii")
-    const quest = questionsSport.splice(0, 1)[0];
-    return quest;
-  }else if(party){
-    const quest = questionsDrunk.splice(0, 1)[0];
-    return quest;
-  }else if(homeparty){
-    const quest = questionsHomeParty.splice(0, 1)[0];
-    return quest;
-  }else if(tequila){
-    const quest = questions.splice(0, 1)[0];
-    return quest;
-  }
-  
+
+
+
+  const quest = questionsSport.splice(0, 1)[0];
+
+
   p.textContent = quest;
   console.log(p.textContent.length);
   redCard.appendChild(p);
   nameText.textContent = getRandomPlayerName();
   console.log(nameText.textContent);
-//adding points
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i].name === nameText.textContent) {
-    const RandomPoints = Math.floor(Math.random() * 5);
-    arr[i].points += RandomPoints;
-    console.log(RandomPoints);
-   
-    console.log(nameText);
-    localStorage.setItem("players", JSON.stringify(arr));
+  //adding points
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].name === nameText.textContent) {
+      const RandomPoints = Math.floor(Math.random() * 5);
+      arr[i].points += RandomPoints;
+      console.log(RandomPoints);
 
+      console.log(nameText);
+      localStorage.setItem("players", JSON.stringify(arr));
+
+    }
   }
-}
   localStorage.getItem("players");
   redCard.appendChild(nameText);
   const data = JSON.parse(localStorage.getItem("players"));
   const ava = getAvatar(nameText.textContent, data)
 
-  
+
 
 });
 
@@ -417,32 +404,50 @@ function updateRedCard() {
   } else {
     document.body.style.backgroundColor = selectedCategory.id;
   }
+
+  if (selectedCategory.id == "#FFC0CB") {
+    console.log("homeparty selected");
+
+  } else if (selectedCategory.id == "#ADD8E6") {
+    console.log("party selected");
+
+  } else if (selectedCategory.id == "#F0E68C") {
+    console.log("sport selected");
+    const quest = questions.splice(0, 1)[0];
+    return quest;
+
+  } else if (selectedCategory.id == "#FFE4E1") {
+    console.log("tequila selected");
+
+  } else {
+    console.log("category not selected");
+  }
   //selecting quest and deleting it from array
-  const quest = questions.splice(0, 1)[0];
+
   p.textContent = quest;
   //checking the leng od the quest and rezise it to fit
   checkTheLongOfQuestion(p.textContent);
   redCard.appendChild(p);
 
   nameText.textContent = getRandomPlayerName();
-//adding points
+  //adding points
   for (let i = 0; i < arr.length; i++) {
-  if (arr[i].name === nameText.textContent) {
-    const RandomPoints = Math.floor(Math.random() * 5);
-    arr[i].points += RandomPoints;
-    console.log(RandomPoints);
-    pointText.textContent = RandomPoints;
-    localStorage.setItem("players", JSON.stringify(arr));
+    if (arr[i].name === nameText.textContent) {
+      const RandomPoints = Math.floor(Math.random() * 5);
+      arr[i].points += RandomPoints;
+      console.log(RandomPoints);
+      pointText.textContent = RandomPoints;
+      localStorage.setItem("players", JSON.stringify(arr));
 
+    }
   }
-}
   redCard.appendChild(nameText);
   redCard.appendChild(pointText);
   const oldPlayer = document.querySelectorAll(".player");
   oldPlayer.remove();
 
 
-  
+
 
 }
 
