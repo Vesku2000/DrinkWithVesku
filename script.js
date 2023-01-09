@@ -248,31 +248,34 @@ const questionsHomeParty = ["What is the definition of the word 'taboo'?",
 "What are some taboo topics in finance and business?",];
 const selectedQuestionsID = [];
 
+
 function SelectQuestions(id){
   if(id == "#FFC0CB"){
     console.log("homeparty selected");
-    selectedQuestionsID = questions;
+    const homeparty = true;
   }else if(id == "#ADD8E6"){
     console.log("party selected");
-    selectedQuestionsID.push(questionsDrunk);
+    const party = true;
   }else if(id == "#F0E68C"){
     console.log("sport selected");
-    selectedQuestionsID.push(questionsSport);
+    const sport = false;
+    return sport = true;
     console.log(selectedQuestionsID);
   }else if(id == "#FFE4E1"){
     console.log("tequila selected");
-    selectedQuestionsID = questionsHomeParty;
+    const tequila = true;
   }else{
     console.log("category not selected");
   }
+  console.log(selectedQuestionsID);
   return selectedQuestionsID;
   
 }
 
-function shufleQuestions(selectedQuestions) {
-  for (let i = selectedQuestions.length - 1; i > 0; i--) {
+function shufleQuestions(selectedQuestionsID) {
+  for (let i = selectedQuestionsID.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
-    [selectedQuestions[i], selectedQuestions[j]] = [selectedQuestions[j], selectedQuestions[i]];
+    [selectedQuestionsID[i], selectedQuestionsID[j]] = [selectedQuestionsID[j], selectedQuestionsID[i]];
   }
 }
 
@@ -298,14 +301,28 @@ startGameButton.addEventListener("click", () => {
   }
   SelectQuestions(selectedCategory.id);
   
-  const shufledQuest = shufleQuestions(selectedQuestionsID);
+  shufleQuestions(selectedQuestionsID);
   showButton();
   PointsElement.style.display = "block";
   redCard.style.backgroundColor = "red";
   redCard.style.display = "block";
   playerDiv.style.display = "flex";
   
-  const quest = questions.splice(0, 1)[0];
+  if(sport){
+    console.log("sport toimii")
+    const quest = questionsSport.splice(0, 1)[0];
+    return quest;
+  }else if(party){
+    const quest = questionsDrunk.splice(0, 1)[0];
+    return quest;
+  }else if(homeparty){
+    const quest = questionsHomeParty.splice(0, 1)[0];
+    return quest;
+  }else if(tequila){
+    const quest = questions.splice(0, 1)[0];
+    return quest;
+  }
+  
   p.textContent = quest;
   console.log(p.textContent.length);
   redCard.appendChild(p);
