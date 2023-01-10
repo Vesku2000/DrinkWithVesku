@@ -429,11 +429,16 @@ function updateRedCard() {
     console.log("tequila selected");
     const quest = questionsDrunk.splice(0, 1)[0];
     p.textContent = quest;
+    
   } else {
     console.log("category not selected");
   }
   //selecting quest and deleting it from array
-
+  if(quest == ""){
+    console.log("game over");
+  }else{
+    return;
+  }
 
   //checking the leng od the quest and rezise it to fit
   checkTheLongOfQuestion(p.textContent);
@@ -487,6 +492,7 @@ function getRandomColor() {
   }
   return color;
 }
+
 
 
 
