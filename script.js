@@ -423,7 +423,17 @@ function updateRedCard() {
   } else if (selectedCategory.id == "#F0E68C") {
     console.log("sport selected");
     const quest = questionsSport.splice(0, 1)[0];
-    p.textContent = quest;
+    //checking if game is over
+    if (quest == null) {
+      console.log("game over");
+      p.textContent = "Game over";
+      setTimeout(function() {
+          location.reload();
+      }, 10000); // reload the page after 3 seconds
+  } else {
+      p.textContent = quest;
+  }
+  
 
   } else if (selectedCategory.id == "#FFE4E1") {
     console.log("tequila selected");
@@ -434,11 +444,7 @@ function updateRedCard() {
     console.log("category not selected");
   }
   //selecting quest and deleting it from array
-  if(quest == ""){
-    console.log("game over");
-  }else{
-    return;
-  }
+  
 
   //checking the leng od the quest and rezise it to fit
   checkTheLongOfQuestion(p.textContent);
