@@ -423,15 +423,27 @@ function updateRedCard() {
   } else if (selectedCategory.id == "#F0E68C") {
     console.log("sport selected");
     const quest = questionsSport.splice(0, 1)[0];
+    //getting most points player
+    const allPlayers = JSON.parse(localStorage.getItem('players'));
+    allPlayers.sort((a, b) => b.points - a.points);
+    const winner = allPlayers[0];
+    p.textContent = `Game winner is ${winner.name}`;
     //checking if game is over
     if (quest == null) {
       console.log("game over");
-      p.textContent = "Game over";
+      
+      //getting most points player
+      
+      console.log(winner.name + ' has the highest points: ' + winner.points);
+      
+      //reload timer
       setTimeout(function() {
           location.reload();
-      }, 10000); // reload the page after 3 seconds
+      }, 60000); // reload the page after 60 seconds
   } else {
-      p.textContent = quest;
+    p.textContent = quest;
+    nameText.textContent = getRandomPlayerName();
+      
   }
   
 
@@ -439,7 +451,6 @@ function updateRedCard() {
     console.log("tequila selected");
     const quest = questionsDrunk.splice(0, 1)[0];
     p.textContent = quest;
-    
   } else {
     console.log("category not selected");
   }
@@ -450,7 +461,7 @@ function updateRedCard() {
   checkTheLongOfQuestion(p.textContent);
   redCard.appendChild(p);
 
-  nameText.textContent = getRandomPlayerName();
+  
   //adding points
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].name === nameText.textContent) {
@@ -462,8 +473,8 @@ function updateRedCard() {
 
     }
   }
-  redCard.appendChild(nameText);
-  redCard.appendChild(pointText);
+  //redCard.appendChild(pointText);
+  //redCard.appendChild(nameText);
   const oldPlayer = document.querySelectorAll(".player");
   oldPlayer.remove();
 
