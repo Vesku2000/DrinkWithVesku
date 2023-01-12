@@ -414,11 +414,57 @@ function updateRedCard() {
   if (selectedCategory.id == "#FFC0CB") {
     console.log("homeparty selected");
     const quest = questions.splice(0, 1)[0];
+    //getting most points player
+    const allPlayers = JSON.parse(localStorage.getItem('players'));
+    allPlayers.sort((a, b) => b.points - a.points);
+    const winner = allPlayers[0];
+    p.textContent = `Game winner is ${winner.name}`;
+    //checking if game is over
+    if (quest == null) {
+      console.log("game over");
+      
+      //getting most points player
+      
+      console.log(winner.name + ' has the highest points: ' + winner.points);
+      //making next question button not visible
+      button.style.display = "none";
+      
+      //reload timer
+      setTimeout(function() {
+          location.reload();
+      }, 60000); // reload the page after 60 seconds
+  } else {
     p.textContent = quest;
+    nameText.textContent = getRandomPlayerName();
+      
+  }
   } else if (selectedCategory.id == "#ADD8E6") {
     console.log("party selected");
     const quest = questionsHomeParty.splice(0, 1)[0];
+    //getting most points player
+    const allPlayers = JSON.parse(localStorage.getItem('players'));
+    allPlayers.sort((a, b) => b.points - a.points);
+    const winner = allPlayers[0];
+    p.textContent = `Game winner is ${winner.name}`;
+    //checking if game is over
+    if (quest == null) {
+      console.log("game over");
+      
+      //getting most points player
+      
+      console.log(winner.name + ' has the highest points: ' + winner.points);
+      //making next question button not visible
+      button.style.display = "none";
+      
+      //reload timer
+      setTimeout(function() {
+          location.reload();
+      }, 60000); // reload the page after 60 seconds
+  } else {
     p.textContent = quest;
+    nameText.textContent = getRandomPlayerName();
+      
+  }
 
   } else if (selectedCategory.id == "#F0E68C") {
     console.log("sport selected");
@@ -435,6 +481,7 @@ function updateRedCard() {
       //getting most points player
       
       console.log(winner.name + ' has the highest points: ' + winner.points);
+      //making next question button not visible
       button.style.display = "none";
       
       //reload timer
@@ -451,7 +498,30 @@ function updateRedCard() {
   } else if (selectedCategory.id == "#FFE4E1") {
     console.log("tequila selected");
     const quest = questionsDrunk.splice(0, 1)[0];
+    //getting most points player
+    const allPlayers = JSON.parse(localStorage.getItem('players'));
+    allPlayers.sort((a, b) => b.points - a.points);
+    const winner = allPlayers[0];
+    p.textContent = `Game winner is ${winner.name}`;
+    //checking if game is over
+    if (quest == null) {
+      console.log("game over");
+      
+      //getting most points player
+      
+      console.log(winner.name + ' has the highest points: ' + winner.points);
+      //making next question button not visible
+      button.style.display = "none";
+      
+      //reload timer
+      setTimeout(function() {
+          location.reload();
+      }, 60000); // reload the page after 60 seconds
+  } else {
     p.textContent = quest;
+    nameText.textContent = getRandomPlayerName();
+      
+  }
   } else {
     console.log("category not selected");
   }
