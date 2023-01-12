@@ -435,6 +435,7 @@ function updateRedCard() {
       //getting most points player
       
       console.log(winner.name + ' has the highest points: ' + winner.points);
+      button.style.display = "none";
       
       //reload timer
       setTimeout(function() {
