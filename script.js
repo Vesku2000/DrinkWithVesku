@@ -595,8 +595,7 @@ function updateRedCard() {
   } else {
     console.log("category not selected");
   }
-  //selecting quest and deleting it from array
-  
+  //selecting quest and deleting it from array  
 
   //checking the leng od the quest and rezise it to fit
   checkTheLongOfQuestion(p.textContent);
