@@ -6,7 +6,7 @@ const playerList = document.querySelector('.player-list');
 const players = JSON.parse(localStorage.getItem('players')) || [];
 let arr = JSON.parse(localStorage.getItem("players"));
 console.log(arr);
-if (!null) {
+if (!localStorage.getItem("players") == null) {
   for (let i = 0; i < arr.length; i++) {
     arr[i].points = 0;
   }
@@ -336,6 +336,7 @@ const PointsElement = document.getElementById("Points");
 //! START GAME
 //----------------------------------------------------------
 startGameButton.addEventListener("click", () => {
+  arr = JSON.parse(localStorage.getItem("players"));
   for (let i = 0; i < arr.length; i++) {
     arr[i].points = 0;
   }
