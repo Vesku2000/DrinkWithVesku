@@ -553,7 +553,7 @@ function updateRedCard() {
 
       //getting most points player
 
-      console.log(winner.name + ' has the highest points: ' + winner.points);
+      console.log(winner.name + ' has the highest points: ' +                   winner.points);
       //making next question button not visible
       button.style.display = "none";
 
@@ -598,7 +598,7 @@ function updateRedCard() {
   } else {
     console.log("category not selected");
   }
-  //selecting quest and deleting it from array  
+
 
   //checking the leng od the quest and rezise it to fit
   checkTheLongOfQuestion(p.textContent);
@@ -616,8 +616,7 @@ function updateRedCard() {
 
     }
   }
-  //redCard.appendChild(pointText);
-  //redCard.appendChild(nameText);
+//removing old player from questionss box
   const oldPlayer = document.querySelectorAll(".player");
   oldPlayer.remove();
 
@@ -642,7 +641,7 @@ function checkTheLongOfQuestion(question) {
   }
 }
 
-//ger random colorcode
+//ger random colorcode 
 function getRandomColor() {
 
   const letters = '0123456789ABCDEF';
