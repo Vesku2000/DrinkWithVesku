@@ -334,6 +334,7 @@ const PointsElement = document.getElementById("Points");
 //! START GAME
 //----------------------------------------------------------
 startGameButton.addEventListener("click", () => {
+  let arr = JSON.parse(localStorage.getItem("players"));
   for (let i = 0; i < arr.length; i++) {
     arr[i].points = 0;
   }
