@@ -5,9 +5,11 @@ const playerList = document.querySelector('.player-list');
 // Load any existing players from local storage
 const players = JSON.parse(localStorage.getItem('players')) || [];
 let arr = JSON.parse(localStorage.getItem("players"));
-
-for (let i = 0; i < arr.length; i++) {
-  arr[i].points = 0;
+console.log(arr);
+if (!localStorage.getItem("players") == null) {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i].points = 0;
+  }
 }
 localStorage.setItem("players", JSON.stringify(arr));
 
@@ -206,76 +208,76 @@ const questionsSport = ["Has any Finnish hockey player won the Stanley Cup?",
   "Name one athlete who has won the most Formula 1 championships.",
   "Name one athlete who has won the most Wimbledon titles.",
   "What is the most popular sport in the world?",
-"How many players are on a standard soccer team?",
-"What is the difference between a slam dunk and a layup in basketball?",
-"How many innings are in a standard baseball game?",
-"What is the name of the famous stadium where the Super Bowl is held?",
-"How many games are in a standard NHL season?",
-"What is the primary objective in a game of American football?",
-"What is the process for scoring in a game of golf?",
-"How many types of disciplines are there in the Olympics?",
-"What is the name of the famous race in Formula 1?",
-"What is the difference between a forward and a defender in soccer?",
-"How many players are on a standard American football team?",
-"What is the name of the famous tournament in tennis?",
-"How is cricket typically played?",
-"What is the difference between a set and a match in tennis?",
-"What is the most popular sport in United states?",
-"How many players are on a standard volleyball team?",
-"What is the name of the famous event in gymnastics?",
-"What is the difference between a full court press and a half court press in basketball?",
-"How many players are on a standard Rugby team?"
+  "How many players are on a standard soccer team?",
+  "What is the difference between a slam dunk and a layup in basketball?",
+  "How many innings are in a standard baseball game?",
+  "What is the name of the famous stadium where the Super Bowl is held?",
+  "How many games are in a standard NHL season?",
+  "What is the primary objective in a game of American football?",
+  "What is the process for scoring in a game of golf?",
+  "How many types of disciplines are there in the Olympics?",
+  "What is the name of the famous race in Formula 1?",
+  "What is the difference between a forward and a defender in soccer?",
+  "How many players are on a standard American football team?",
+  "What is the name of the famous tournament in tennis?",
+  "How is cricket typically played?",
+  "What is the difference between a set and a match in tennis?",
+  "What is the most popular sport in United states?",
+  "How many players are on a standard volleyball team?",
+  "What is the name of the famous event in gymnastics?",
+  "What is the difference between a full court press and a half court press in basketball?",
+  "How many players are on a standard Rugby team?"
 ];
 const questionsDrunk = ["What is the most popular cocktail in the world?",
-"How many calories are in a glass of red wine?",
-"What is the difference between a lager and an ale?",
-"How many ounces are in a standard shot glass?",
-"What is the name of the famous bar in the TV show 'Cheers'?",
-"How many years does it take for a champagne bottle to ferment?",
-"What is the primary ingredient in a Margarita?",
-"What is the process for making whiskey?",
-"How many types of beer are there?",
-"What is the name of the famous cocktail made with gin, vermouth, and a dash of orange bitters?",
-"What is the difference between a martini and a Manhattan?",
-"How many years must a brandy be aged to be considered 'extra old'?",
-"What is the name of the famous cocktail made with tequila, lime juice, and triple sec?",
-"How is beer typically served?",
-"What is the difference between a sherry and a port?",
-"What is the most popular spirit in the world?",
-"How many types of wine are there?",
-"What is the name of the famous cocktail made with rum, lime juice, and mint?",
-"What is the difference between a whiskey sour and a gin sour?",
-"How many years must a cognac be aged to be considered 'extra old'?",
-"What is the name of the famous cocktail made with vodka and tomato juice?",
-"How is a Bloody Mary typically garnished?",
-"What is the difference between a pilsner and a stout?",
-"How many types of whiskey are there?",
-"What is the name of the famous cocktail made with gin, lime juice, and sugar?",
-"What is the difference between a Margarita and a Daiquiri?",
-"How many years must a whiskey be aged to be considered 'straight'?",
-"What is the name of the famous cocktail made with gin, tonic water, and a lime?",
-"What is the difference between a Long Island Iced Tea and a Screwdriver?",
-"How many types of brandy are there?",
-"Why was the math book sad?",
-"Why don't scientists trust atoms?",
-"Why don't oysters give to charity?",
-"Why did the tomato turn red?",
-"Why did the cookie go to the doctor?",
-"Why was the computer cold?",
-"Why can't a nose be 12 inches long?",
-"Why did the banana go to the doctor?",
-"Why did the chicken wear a tuxedo to the party?",
-"Why did the scarecrow win an award?",
-"Why did the cookie go to the hospital?",
-"Why don't skeletons fight each other?",
-"Why did the frog call his insurance company?",
-"Why did the tomato turn red?",
-"Why did the belt go to jail?",
-"Why did the chicken cross the playground?",
-"Why did the bicycle fall over?",
-"Why did the cookie go to the meeting?",
-"Why did the clock go to the doctor?",
-"Why did the belt go to jail?"];
+  "How many calories are in a glass of red wine?",
+  "What is the difference between a lager and an ale?",
+  "How many ounces are in a standard shot glass?",
+  "What is the name of the famous bar in the TV show 'Cheers'?",
+  "How many years does it take for a champagne bottle to ferment?",
+  "What is the primary ingredient in a Margarita?",
+  "What is the process for making whiskey?",
+  "How many types of beer are there?",
+  "What is the name of the famous cocktail made with gin, vermouth, and a dash of orange bitters?",
+  "What is the difference between a martini and a Manhattan?",
+  "How many years must a brandy be aged to be considered 'extra old'?",
+  "What is the name of the famous cocktail made with tequila, lime juice, and triple sec?",
+  "How is beer typically served?",
+  "What is the difference between a sherry and a port?",
+  "What is the most popular spirit in the world?",
+  "How many types of wine are there?",
+  "What is the name of the famous cocktail made with rum, lime juice, and mint?",
+  "What is the difference between a whiskey sour and a gin sour?",
+  "How many years must a cognac be aged to be considered 'extra old'?",
+  "What is the name of the famous cocktail made with vodka and tomato juice?",
+  "How is a Bloody Mary typically garnished?",
+  "What is the difference between a pilsner and a stout?",
+  "How many types of whiskey are there?",
+  "What is the name of the famous cocktail made with gin, lime juice, and sugar?",
+  "What is the difference between a Margarita and a Daiquiri?",
+  "How many years must a whiskey be aged to be considered 'straight'?",
+  "What is the name of the famous cocktail made with gin, tonic water, and a lime?",
+  "What is the difference between a Long Island Iced Tea and a Screwdriver?",
+  "How many types of brandy are there?",
+  "Why was the math book sad?",
+  "Why don't scientists trust atoms?",
+  "Why don't oysters give to charity?",
+  "Why did the tomato turn red?",
+  "Why did the cookie go to the doctor?",
+  "Why was the computer cold?",
+  "Why can't a nose be 12 inches long?",
+  "Why did the banana go to the doctor?",
+  "Why did the chicken wear a tuxedo to the party?",
+  "Why did the scarecrow win an award?",
+  "Why did the cookie go to the hospital?",
+  "Why don't skeletons fight each other?",
+  "Why did the frog call his insurance company?",
+  "Why did the tomato turn red?",
+  "Why did the belt go to jail?",
+  "Why did the chicken cross the playground?",
+  "Why did the bicycle fall over?",
+  "Why did the cookie go to the meeting?",
+  "Why did the clock go to the doctor?",
+  "Why did the belt go to jail?"];
 const questionsHomeParty = ["What is the definition of the word 'taboo'?",
   "What are some common taboo topics in society?",
   "What is the origin of the word 'taboo'?",
@@ -334,7 +336,11 @@ const PointsElement = document.getElementById("Points");
 //! START GAME
 //----------------------------------------------------------
 startGameButton.addEventListener("click", () => {
+<<<<<<< HEAD
   let arr = JSON.parse(localStorage.getItem("players"));
+=======
+  arr = JSON.parse(localStorage.getItem("players"));
+>>>>>>> 3a19028b2adf72c75122469132bbe2a8075ca8cf
   for (let i = 0; i < arr.length; i++) {
     arr[i].points = 0;
   }
@@ -493,22 +499,22 @@ function updateRedCard() {
     //checking if game is over
     if (quest == null) {
       console.log("game over");
-      
+
       //getting most points player
-      
+
       console.log(winner.name + ' has the highest points: ' + winner.points);
       //making next question button not visible
       button.style.display = "none";
-      
+
       //reload timer
       setTimeout(function() {
-          location.reload();
+        location.reload();
       }, 60000); // reload the page after 60 seconds
-  } else {
-    p.textContent = quest;
-    nameText.textContent = getRandomPlayerName();
-      
-  }
+    } else {
+      p.textContent = quest;
+      nameText.textContent = getRandomPlayerName();
+
+    }
   } else if (selectedCategory.id == "#ADD8E6") {
     console.log("party selected");
     const quest = questionsHomeParty.splice(0, 1)[0];
@@ -520,22 +526,22 @@ function updateRedCard() {
     //checking if game is over
     if (quest == null) {
       console.log("game over");
-      
+
       //getting most points player
-      
+
       console.log(winner.name + ' has the highest points: ' + winner.points);
       //making next question button not visible
       button.style.display = "none";
-      
+
       //reload timer
       setTimeout(function() {
-          location.reload();
+        location.reload();
       }, 60000); // reload the page after 60 seconds
-  } else {
-    p.textContent = quest;
-    nameText.textContent = getRandomPlayerName();
-      
-  }
+    } else {
+      p.textContent = quest;
+      nameText.textContent = getRandomPlayerName();
+
+    }
 
   } else if (selectedCategory.id == "#F0E68C") {
     console.log("sport selected");
@@ -548,23 +554,23 @@ function updateRedCard() {
     //checking if game is over
     if (quest == null) {
       console.log("game over");
-      
+
       //getting most points player
-      
-      console.log(winner.name + ' has the highest points: ' + winner.points);
+
+      console.log(winner.name + ' has the highest points: ' +                   winner.points);
       //making next question button not visible
       button.style.display = "none";
-      
+
       //reload timer
       setTimeout(function() {
-          location.reload();
+        location.reload();
       }, 60000); // reload the page after 60 seconds
-  } else {
-    p.textContent = quest;
-    nameText.textContent = getRandomPlayerName();
-      
-  }
-  
+    } else {
+      p.textContent = quest;
+      nameText.textContent = getRandomPlayerName();
+
+    }
+
 
   } else if (selectedCategory.id == "#FFE4E1") {
     console.log("tequila selected");
@@ -577,32 +583,32 @@ function updateRedCard() {
     //checking if game is over
     if (quest == null) {
       console.log("game over");
-      
+
       //getting most points player
-      
+
       console.log(winner.name + ' has the highest points: ' + winner.points);
       //making next question button not visible
       button.style.display = "none";
-      
+
       //reload timer
       setTimeout(function() {
-          location.reload();
+        location.reload();
       }, 60000); // reload the page after 60 seconds
-  } else {
-    p.textContent = quest;
-    nameText.textContent = getRandomPlayerName();
-      
-  }
+    } else {
+      p.textContent = quest;
+      nameText.textContent = getRandomPlayerName();
+
+    }
   } else {
     console.log("category not selected");
   }
-  //selecting quest and deleting it from array  
+
 
   //checking the leng od the quest and rezise it to fit
   checkTheLongOfQuestion(p.textContent);
   redCard.appendChild(p);
 
-  
+
   //adding points
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].name === nameText.textContent) {
@@ -614,8 +620,7 @@ function updateRedCard() {
 
     }
   }
-  //redCard.appendChild(pointText);
-  //redCard.appendChild(nameText);
+//removing old player from questionss box
   const oldPlayer = document.querySelectorAll(".player");
   oldPlayer.remove();
 
@@ -640,7 +645,7 @@ function checkTheLongOfQuestion(question) {
   }
 }
 
-//ger random colorcode
+//ger random colorcode 
 function getRandomColor() {
 
   const letters = '0123456789ABCDEF';
@@ -650,6 +655,11 @@ function getRandomColor() {
   }
   return color;
 }
+
+
+
+
+
 
 
 
