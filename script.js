@@ -334,12 +334,13 @@ const bgColor = "";
 
 const PointsElement = document.getElementById("Points");
 //! START GAME
-//----------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------------------
 startGameButton.addEventListener("click", () => {
   arr = JSON.parse(localStorage.getItem("players"));
   console.log(arr);
   for (let i = 0; i < arr.length; i++) {
     arr[i].points = 0;
+    
   }
 
   localStorage.setItem("players", JSON.stringify(arr));
