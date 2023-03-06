@@ -5,7 +5,7 @@ const playerList = document.querySelector('.player-list');
 // Load any existing players from local storage
 const players = JSON.parse(localStorage.getItem('players')) || [];
 let arr = JSON.parse(localStorage.getItem("players"));
-console.log(arr);
+
 if (!localStorage.getItem("players") == null) {
   for (let i = 0; i < arr.length; i++) {
     arr[i].points = 0;
@@ -118,7 +118,7 @@ players.forEach((player) => {
 //getting random player name
 function getRandomPlayerName() {
   let str = localStorage.getItem('players');
-  console.log(str.length);
+ 
   // Parse the string value into a JavaScript array
   let array = JSON.parse(str);
 
@@ -136,7 +136,7 @@ function getAvatar(name, data) {
     // Check if the name matches the current item
     if (item.name === name) {
       // If it does, return the avatar value
-      console.log(item.avatar);
+     
       return item.avatar;
     }
   }
@@ -336,11 +336,8 @@ const PointsElement = document.getElementById("Points");
 //! START GAME
 //----------------------------------------------------------
 startGameButton.addEventListener("click", () => {
-<<<<<<< HEAD
-  let arr = JSON.parse(localStorage.getItem("players"));
-=======
   arr = JSON.parse(localStorage.getItem("players"));
->>>>>>> 3a19028b2adf72c75122469132bbe2a8075ca8cf
+  console.log(arr);
   for (let i = 0; i < arr.length; i++) {
     arr[i].points = 0;
   }
@@ -359,24 +356,24 @@ startGameButton.addEventListener("click", () => {
   //SelectQuestions(selectedCategory.id);
 
   if (selectedCategory.id == "#FFC0CB") {
-    console.log("homeparty selected");
+    
     const quest = questionsHomeParty.splice(0, 1)[0];
     p.textContent = quest;
   } else if (selectedCategory.id == "#ADD8E6") {
-    console.log("party selected");
+    
     const quest = questions.splice(0, 1)[0];
     p.textContent = quest;
   } else if (selectedCategory.id == "#F0E68C") {
-    console.log("sport selected");
+    
     const quest = questionsSport.splice(0, 1)[0];
     p.textContent = quest;
-    console.log(selectedQuestionsID);
+    
   } else if (selectedCategory.id == "#FFE4E1") {
-    console.log("tequila selected");
+    
     const quest = questionsDrunk.splice(0, 1)[0];
     p.textContent = quest;
   } else {
-    console.log("category not selected");
+    
   }
 
   shufleQuestions(selectedQuestionsID);
@@ -396,15 +393,15 @@ startGameButton.addEventListener("click", () => {
 
   redCard.appendChild(p);
   nameText.textContent = getRandomPlayerName();
-  console.log(nameText.textContent);
+  // console.log(nameText.textContent);
   //adding points
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].name === nameText.textContent) {
       const RandomPoints = Math.floor(Math.random() * 5 + 1);
       arr[i].points += RandomPoints;
-      console.log(RandomPoints);
+      // console.log(RandomPoints);
       pointText.textContent = RandomPoints;
-      console.log(nameText);
+      // console.log(nameText);
       localStorage.setItem("players", JSON.stringify(arr));
 
     }
@@ -489,7 +486,7 @@ function updateRedCard() {
   }
 
   if (selectedCategory.id == "#FFC0CB") {
-    console.log("homeparty selected");
+    
     const quest = questions.splice(0, 1)[0];
     //getting most points player
     const allPlayers = JSON.parse(localStorage.getItem('players'));
@@ -516,7 +513,7 @@ function updateRedCard() {
 
     }
   } else if (selectedCategory.id == "#ADD8E6") {
-    console.log("party selected");
+    
     const quest = questionsHomeParty.splice(0, 1)[0];
     //getting most points player
     const allPlayers = JSON.parse(localStorage.getItem('players'));
@@ -525,7 +522,7 @@ function updateRedCard() {
     p.textContent = `Game winner is ${winner.name}`;
     //checking if game is over
     if (quest == null) {
-      console.log("game over");
+   
 
       //getting most points player
 
@@ -544,7 +541,7 @@ function updateRedCard() {
     }
 
   } else if (selectedCategory.id == "#F0E68C") {
-    console.log("sport selected");
+   
     const quest = questionsSport.splice(0, 1)[0];
     //getting most points player
     const allPlayers = JSON.parse(localStorage.getItem('players'));
@@ -553,11 +550,11 @@ function updateRedCard() {
     p.textContent = `Game winner is ${winner.name}`;
     //checking if game is over
     if (quest == null) {
-      console.log("game over");
+      
 
       //getting most points player
 
-      console.log(winner.name + ' has the highest points: ' +                   winner.points);
+      
       //making next question button not visible
       button.style.display = "none";
 
@@ -573,7 +570,7 @@ function updateRedCard() {
 
 
   } else if (selectedCategory.id == "#FFE4E1") {
-    console.log("tequila selected");
+   
     const quest = questionsDrunk.splice(0, 1)[0];
     //getting most points player
     const allPlayers = JSON.parse(localStorage.getItem('players'));
@@ -582,11 +579,11 @@ function updateRedCard() {
     p.textContent = `Game winner is ${winner.name}`;
     //checking if game is over
     if (quest == null) {
-      console.log("game over");
+      
 
       //getting most points player
 
-      console.log(winner.name + ' has the highest points: ' + winner.points);
+     
       //making next question button not visible
       button.style.display = "none";
 
